@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Explorer – Pragati | Find Your Education Path</title>
+    <meta name="description" content="Select your past education and instantly discover all possible future paths — courses, colleges, exams, and salary expectations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css?v=11">
+    <link rel="stylesheet" href="../styles/pages.css?v=11">
+    <link rel="stylesheet" href="../styles/path-explorer.css?v=11">
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-icon">प्र</span>
+            <span class="logo-text">Pragati</span>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item nav-has-dropdown">
+                <a href="browse-paths.html" class="nav-link active">Explore <i class="fas fa-chevron-down" style="font-size:0.7rem"></i></a>
+                <div class="nav-dropdown">
+                    <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+                    <a href="path-explorer.html" class="active"><i class="fas fa-route"></i> Interactive Explorer</a>
+                    <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+                    <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+                    <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-auth">
+            <a href="login.html" class="nav-login-btn">Login</a>
+            <a href="register.html" class="nav-signup-btn">Start Free</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile-overlay" id="mobileOverlay">
+    <div class="nav-mobile-panel" id="mobilePanel">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">प्र</span><span class="logo-text">Pragati</span></a>
+            <button class="nav-mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="nav-mobile-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+            <a href="path-explorer.html" class="active"><i class="fas fa-route"></i> Interactive Explorer</a>
+            <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+            <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+            <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="nav-mobile-auth">
+            <a href="login.html" class="nmb-login">Login</a>
+            <a href="register.html" class="nmb-signup">Start Free</a>
+        </div>
+    </div>
+</div>
+
+<div class="page-wrapper" style="background: var(--bg-alt);">
+
+    <!-- Page Header -->
+    <div class="page-header path-hero">
+        <div class="pe-hero-bg">
+            <div class="pe-blob pe-blob-1"></div>
+            <div class="pe-blob pe-blob-2"></div>
+            <div class="pe-grid"></div>
+        </div>
+        <div class="container text-center page-header-content">
+            <div class="page-tag" style="background: var(--white);"><i class="fas fa-compass text-primary"></i> Interactive Path Explorer</div>
+            <h1 class="page-title">Find Your <span class="gradient-text">Perfect Path</span></h1>
+            <p class="page-subtitle">Select your educational background and instantly discover every possible route available to you.</p>
+        </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="container" style="padding-bottom: var(--space-20);">
+        <div class="explorer-layout">
+
+            <!-- LEFT: Selector Panel -->
+            <aside class="selector-panel card">
+                <div class="panel-header">
+                    <div class="panel-header-icon"><i class="fas fa-filter text-white"></i></div>
+                    <div>
+                        <h3 class="font-display">Select Your Profile</h3>
+                        <p class="text-muted">Fine-tune to see personalized paths</p>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!-- Step 1: Education level -->
+                    <div class="v-step-container">
+                        <div class="v-step-header">
+                            <div class="v-step-circle">1</div>
+                            <div class="v-step-title">Education Level</div>
+                        </div>
+                        <div class="selector-field form-group" style="margin-bottom:0;">
+                            <label class="field-label form-label">
+                                <i class="fas fa-graduation-cap text-primary"></i>
+                                Last Completed Education
+                                <span class="required">*</span>
+                            </label>
+                            <div class="custom-select">
+                                <select id="educationLevel" class="form-control form-select">
+                                    <option value="">— Choose Level —</option>
+                                    <option value="10th">Class 10th (Secondary)</option>
+                                    <option value="12th">Class 12th (Senior Secondary)</option>
+                                    <option value="diploma">Diploma (Polytechnic / ITI)</option>
+                                    <option value="graduation">Graduation (Bachelor's)</option>
+                                    <option value="postgrad">Post-Graduation (Master's)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Stream (dynamic) -->
+                    <div class="v-step-container stream-selection" id="streamSection" style="display:none">
+                        <div class="v-step-header">
+                            <div class="v-step-circle">2</div>
+                            <div class="v-step-title">Stream</div>
+                        </div>
+                        <label class="field-label form-label">
+                            <i class="fas fa-layer-group text-primary"></i>
+                            Your Stream / Subject Group
+                            <span class="required">*</span>
+                        </label>
+                        <div class="stream-grid" id="streamGrid">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Optional filters -->
+                    <div class="v-step-container selector-field form-group" id="percentileSection" style="display:none">
+                        <div class="v-step-header">
+                            <div class="v-step-circle">3</div>
+                            <div class="v-step-title">Filters (Optional)</div>
+                        </div>
+                        <label class="field-label form-label">
+                            <i class="fas fa-chart-bar text-primary"></i>
+                            Approximate Percentile / Marks
+                        </label>
+                        <div class="custom-select">
+                            <select id="percentile" class="form-control form-select">
+                                <option value="">— Optional —</option>
+                                <option value="90plus">90% and above</option>
+                                <option value="75to90">75% – 90%</option>
+                                <option value="60to75">60% – 75%</option>
+                                <option value="below60">Below 60%</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Career Interest -->
+                    <div class="selector-field form-group" id="interestSection" style="display:none">
+                        <label class="field-label form-label">
+                            <i class="fas fa-heart text-primary"></i>
+                            Career Interest (Optional)
+                        </label>
+                        <div class="custom-select">
+                            <select id="careerInterest" class="form-control form-select">
+                                <option value="">— All Interests —</option>
+                                <option value="tech">💻 Technology & Engineering</option>
+                                <option value="medical">🏥 Medical & Healthcare</option>
+                                <option value="business">📊 Business & Finance</option>
+                                <option value="creative">🎨 Creative & Design</option>
+                                <option value="law">⚖️ Law & Governance</option>
+                                <option value="education">📚 Teaching & Education</option>
+                                <option value="research">🔬 Research & Science</option>
+                                <option value="media">📰 Media & Communication</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Current selection chips -->
+                    <div class="selection-chips" id="selectionChips"></div>
+
+                    <!-- Explore Button -->
+                    <button class="btn btn-primary btn-full btn-lg" id="btnExplore" disabled style="margin-top: 1.25rem;">
+                        <i class="fas fa-compass"></i> Explore My Paths
+                    </button>
+
+                    <button class="btn btn-outline-primary btn-full btn-sm" id="btnReset" style="margin-top: 0.5rem; display:none">
+                        <i class="fas fa-redo"></i> Reset Filters
+                    </button>
+                </div>
+            </aside>
+
+            <!-- RIGHT: Results Panel -->
+            <main class="results-panel" id="resultsPanel">
+                <!-- Empty State -->
+                <div class="empty-state card center" id="emptyState" style="min-height: 400px; flex-direction: column;">
+                    <div class="empty-icon text-primary"><i class="fas fa-compass" style="font-size: 3rem;"></i></div>
+                    <h3 class="font-display" style="margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--gray-900);">Select Your Education Background</h3>
+                    <p class="text-med" style="max-width: 400px; text-align: center;">Use the panel on the left to choose your completed education level and stream. We'll instantly show you all paths available for your profile.</p>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+                    <span class="logo-icon">प्र</span><span class="logo-text" style="color:white">Pragati</span>
+                </a>
+                <p>Empowering every Indian student to make informed decisions about education and career — from Class 10 to PhD.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="browse-paths.html">Browse All Paths</a>
+                <a href="path-explorer.html">Interactive Explorer</a>
+                <a href="education-levels.html">By Education Level</a>
+                <a href="streams.html">By Stream</a>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign Up Free</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">College Rankings</a>
+                <a href="#">Scholarship Guide</a>
+                <a href="#">Entrance Exam Dates</a>
+                <a href="#">Career Aptitude Test</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Pragati. All rights reserved. Made with ❤️ for Indian students.</span>
+            <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+        </div>
+    </div>
+</footer>
+
+<!-- Detail Modal -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="detailModal">
+        <div class="modal-header">
+            <div class="modal-title-group" style="display:flex; align-items:center; gap: 1rem;">
+                <div class="modal-icon text-white center" id="modalIcon" style="width: 60px; height: 60px; border-radius: var(--r-md); font-size: 1.6rem;"></div>
+                <div>
+                    <div style="font-size:0.75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-bottom:4px" id="modalCategory"></div>
+                    <h2 style="font-family: var(--font-display); font-size:1.5rem; font-weight:800; color: var(--gray-900);" id="modalTitle"></h2>
+                    <div style="font-size:0.9rem; color:var(--text-muted)" id="modalSubtitle"></div>
+                </div>
+            </div>
+            <button class="modal-close center" id="modalClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body" id="modalBody">
+            <!-- Filled by JS -->
+        </div>
+    </div>
+</div>
+
+<script>
+// Mobile nav
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobilePanel = document.getElementById('mobilePanel');
+const closeMobileNav = () => { 
+    if(!mobileOverlay) return;
+    mobileOverlay.classList.remove('open'); 
+    mobilePanel.classList.remove('open'); 
+    document.body.style.overflow = ''; 
+    document.body.classList.remove('mobile-menu-open'); 
+};
+const openMobileNav = () => { 
+    mobileOverlay.classList.add('open'); 
+    mobilePanel.classList.add('open'); 
+    document.body.style.overflow = 'hidden'; 
+    document.body.classList.add('mobile-menu-open'); 
+};
+if(document.getElementById('hamburger')) {
+    document.getElementById('hamburger').addEventListener('click', openMobileNav);
+    document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+    mobileOverlay.addEventListener('click', (e) => { if(e.target.id === 'mobilePanel' || e.target.closest('#mobilePanel')) return; closeMobileNav(); });
+    document.querySelectorAll('.nav-mobile-links a').forEach(l => l.addEventListener('click', closeMobileNav));
+}
+</script>
+
+<script src="../scripts/path-explorer.js"></script>
+<script src="../scripts/nav-auth.js"></script></body>
+</html>
+

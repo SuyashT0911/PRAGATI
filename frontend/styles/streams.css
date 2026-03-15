@@ -1,0 +1,68 @@
+/* ── Streams Page Specific ──────────────────────────── */
+.streams-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+.stream-card {
+    background: white; border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl); overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    display: flex; flex-direction: column;
+}
+.stream-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(79,70,229,0.15);
+    border-color: var(--p200);
+}
+.stream-header {
+    padding: 2.5rem 2rem; position: relative; color: white;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    min-height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+.stream-header h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.75rem; font-weight: 800; position: relative; z-index: 2;
+    margin-bottom: 0.5rem; line-height: 1.2;
+}
+.stream-header p {
+    font-size: 0.95rem; opacity: 0.9; position: relative; z-index: 2;
+    max-width: 90%;
+}
+.stream-overlay {
+    position: absolute; inset: 0;
+    z-index: 1;
+}
+
+/* Gradient overrides based on stream type */
+.sh-science .stream-overlay { background: linear-gradient(135deg, rgba(79,70,229,0.9), rgba(124,58,237,0.7)); }
+.sh-medical .stream-overlay { background: linear-gradient(135deg, rgba(236,72,153,0.9), rgba(244,114,182,0.7)); }
+.sh-commerce .stream-overlay { background: linear-gradient(135deg, rgba(245,158,11,0.9), rgba(251,191,36,0.7)); }
+.sh-arts .stream-overlay { background: linear-gradient(135deg, rgba(16,185,129,0.9), rgba(52,211,153,0.7)); }
+.sh-law .stream-overlay { background: linear-gradient(135deg, rgba(71,85,105,0.9), rgba(148,163,184,0.7)); }
+.sh-tech .stream-overlay { background: linear-gradient(135deg, rgba(14,165,233,0.9), rgba(56,189,248,0.7)); }
+
+.stream-content {
+    padding: 2rem; flex: 1; display: flex; flex-direction: column;
+}
+.stream-content h4 {
+    font-size: 0.9rem; font-weight: 700; color: var(--gray-500);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+.stream-paths {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;
+}
+.sp-pill {
+    padding: 0.4rem 0.8rem; border-radius: 8px;
+    background: var(--gray-50); border: 1px solid var(--gray-200);
+    font-size: 0.8rem; font-weight: 600; color: var(--gray-700);
+    transition: all 0.2s;
+}
+.sp-pill:hover {
+    background: var(--p50); color: var(--primary); border-color: var(--p200);
+}
+.stream-card .btn { margin-top: auto; }

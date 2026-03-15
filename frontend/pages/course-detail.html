@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details – Pragati</title>
+    <meta name="description" content="View course details, syllabus, and enroll to start learning.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/course-detail.css">
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-icon">प्र</span>
+            <span class="logo-text">Pragati</span>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item nav-has-dropdown">
+                <a href="browse-paths.html" class="nav-link active">Explore <i class="fas fa-chevron-down" style="font-size:0.7rem"></i></a>
+                <div class="nav-dropdown">
+                    <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+                    <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+                    <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-auth" id="navAuth">
+            <a href="login.html" class="nav-login-btn">Login</a>
+            <a href="register.html" class="nav-signup-btn">Start Free</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile-overlay" id="mobileOverlay">
+    <div class="nav-mobile-panel" id="mobilePanel">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">प्र</span><span class="logo-text">Pragati</span></a>
+            <button class="nav-mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="nav-mobile-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+            <a href="path-explorer.html"><i class="fas fa-route"></i> Explorer</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="nav-mobile-auth">
+            <a href="login.html" class="nmb-login">Login</a>
+            <a href="register.html" class="nmb-signup">Start Free</a>
+        </div>
+    </div>
+</div>
+
+<div class="page-wrapper">
+
+<!-- Loading State -->
+<div id="loadingState" class="loading-state">
+    <div class="spinner-lg"></div>
+    <p>Loading course details...</p>
+</div>
+
+<!-- Course Content (hidden until loaded) -->
+<div id="courseContent" style="display:none">
+
+    <!-- Course Hero -->
+    <section class="course-hero" id="courseHero">
+        <div class="course-hero-bg"></div>
+        <div class="container">
+            <div class="course-hero-inner">
+                <div class="course-hero-text">
+                    <div class="course-breadcrumb">
+                        <a href="courses.html">Courses</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span id="heroDegree"></span>
+                        <i class="fas fa-chevron-right"></i>
+                        <span id="heroStream"></span>
+                    </div>
+                    <h1 id="heroTitle"></h1>
+                    <p id="heroDesc" class="course-hero-desc"></p>
+                    <div class="course-hero-meta">
+                        <span class="chm-item"><i class="fas fa-clock"></i> <span id="heroHours"></span></span>
+                        <span class="chm-item"><i class="fas fa-layer-group"></i> <span id="heroChapters"></span> Chapters</span>
+                        <span class="chm-item"><i class="fas fa-signal"></i> <span id="heroDifficulty"></span></span>
+                        <span class="chm-item"><i class="fas fa-star" style="color:var(--a500)"></i> <span id="heroRating"></span></span>
+                    </div>
+                    <div class="course-hero-actions">
+                        <button id="enrollBtn" class="btn btn-primary btn-xl btn-pill">
+                            <i class="fas fa-play-circle"></i> Enroll Free & Start Learning
+                        </button>
+                        <button id="continueBtn" class="btn btn-primary btn-xl btn-pill" style="display:none">
+                            <i class="fas fa-play"></i> Continue Learning
+                        </button>
+                    </div>
+                    <div class="course-hero-trust">
+                        <span><i class="fas fa-users"></i> <span id="heroEnrollCount"></span> students enrolled</span>
+                        <span><i class="fas fa-certificate"></i> Certificate on completion</span>
+                    </div>
+                </div>
+                <div class="course-hero-icon" id="heroIconBox">
+                    <span id="heroIcon"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Syllabus -->
+    <section class="section" style="background:var(--gray-50)">
+        <div class="container">
+            <div class="course-detail-grid">
+                <!-- Chapters List -->
+                <div class="cd-main">
+                    <div class="cd-section-title">
+                        <i class="fas fa-list-ol"></i> Course Syllabus
+                    </div>
+                    <div class="chapters-list" id="chaptersList">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="cd-sidebar">
+                    <div class="cd-sidebar-card">
+                        <div class="cd-sidebar-title">Course Details</div>
+                        <div class="cd-info-row">
+                            <span class="cd-info-label"><i class="fas fa-graduation-cap"></i> Degree</span>
+                            <span class="cd-info-value" id="sidebarDegree"></span>
+                        </div>
+                        <div class="cd-info-row">
+                            <span class="cd-info-label"><i class="fas fa-code-branch"></i> Stream</span>
+                            <span class="cd-info-value" id="sidebarStream"></span>
+                        </div>
+                        <div class="cd-info-row">
+                            <span class="cd-info-label"><i class="fas fa-calendar"></i> Semester</span>
+                            <span class="cd-info-value" id="sidebarSemester"></span>
+                        </div>
+                        <div class="cd-info-row">
+                            <span class="cd-info-label"><i class="fas fa-star"></i> Credits</span>
+                            <span class="cd-info-value" id="sidebarCredits"></span>
+                        </div>
+                        <div class="cd-info-row">
+                            <span class="cd-info-label"><i class="fas fa-university"></i> University</span>
+                            <span class="cd-info-value" id="sidebarUniversity"></span>
+                        </div>
+                    </div>
+
+                    <div class="cd-sidebar-card">
+                        <div class="cd-sidebar-title">What You'll Learn</div>
+                        <div class="cd-tags" id="sidebarTags"></div>
+                    </div>
+
+                    <div class="cd-sidebar-card cd-progress-card" id="progressCard" style="display:none">
+                        <div class="cd-sidebar-title">Your Progress</div>
+                        <div class="cd-progress-bar">
+                            <div class="cd-progress-fill" id="progressFill"></div>
+                        </div>
+                        <p class="cd-progress-text" id="progressText">0% Complete</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</div><!-- end page-wrapper -->
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+                    <span class="logo-icon">प्र</span><span class="logo-text" style="color:white">Pragati</span>
+                </a>
+                <p>Empowering every Indian student to make informed decisions about education and career.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="courses.html">All Courses</a>
+                <a href="path-explorer.html">Path Explorer</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign Up Free</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Pragati. All rights reserved.</span>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+<script src="../scripts/course-detail.js"></script>
+<script src="../scripts/nav-auth.js"></script></body>
+</html>

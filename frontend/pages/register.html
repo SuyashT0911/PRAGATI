@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account – Pragati | Free Sign Up</title>
+    <meta name="description" content="Create your free Pragati account to explore personalized education paths, enroll in courses, and track your progress.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/auth.css">
+</head>
+<body class="auth-body">
+
+<!-- Animated background -->
+<div class="auth-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="auth-grid"></div>
+</div>
+
+<!-- Top nav bar -->
+<nav class="auth-nav">
+    <a href="index.html" class="auth-nav-logo">
+        <span class="logo-icon">प्र</span>
+        <span class="logo-text">Pragati</span>
+    </a>
+    <a href="index.html" class="auth-nav-back">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+</nav>
+
+<!-- Main layout -->
+<div class="auth-layout">
+
+    <!-- LEFT: Branding panel -->
+    <aside class="auth-panel">
+        <div class="auth-panel-inner">
+            <div class="panel-badge">🆓 Always free to explore</div>
+            <h2 class="panel-title">Join <span class="panel-gradient">50,000+ Students</span> Already Guided</h2>
+            <p class="panel-sub">Create your free account and get instant access to 200+ education paths, certified courses, and a personal progress dashboard.</p>
+
+            <div class="panel-steps">
+                <div class="ps-step">
+                    <div class="ps-num">1</div>
+                    <div class="ps-text">
+                        <strong>Select Your Education Level</strong>
+                        <span>10th, 12th, Diploma, Graduation or Post-Grad</span>
+                    </div>
+                </div>
+                <div class="ps-step">
+                    <div class="ps-num">2</div>
+                    <div class="ps-text">
+                        <strong>Discover Your Paths</strong>
+                        <span>Courses, colleges, entrance exams and salaries</span>
+                    </div>
+                </div>
+                <div class="ps-step">
+                    <div class="ps-num">3</div>
+                    <div class="ps-text">
+                        <strong>Learn & Get Certified</strong>
+                        <span>Enroll, complete chapters, earn certificates</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-trust">
+                <div class="trust-avatars">
+                    <span class="ta" style="background:linear-gradient(135deg,#818cf8,#6366f1)">A</span>
+                    <span class="ta" style="background:linear-gradient(135deg,#34d399,#0d9488)">R</span>
+                    <span class="ta" style="background:linear-gradient(135deg,#fbbf24,#f59e0b)">P</span>
+                    <span class="ta" style="background:linear-gradient(135deg,#f472b6,#ec4899)">K</span>
+                    <span class="ta" style="background:linear-gradient(135deg,#60a5fa,#3b82f6)">M</span>
+                </div>
+                <span>Join students from IIT, NIT, AIIMS & more</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- RIGHT: Register form -->
+    <main class="auth-main">
+        <div class="auth-card" id="authCard">
+
+            <div class="auth-card-header">
+                <div class="auth-card-icon" style="background:linear-gradient(135deg,#34d399,#0d9488)">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h1>Create Free Account</h1>
+                <p>Start your guided education journey today</p>
+            </div>
+
+            <!-- Social signup -->
+            <button class="social-btn" id="googleBtn" type="button">
+                <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 002.38-5.88c0-.57-.05-.66-.15-1.18z"/><path fill="#34A853" d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 01-7.18-2.54H1.83v2.07A8 8 0 008.98 17z"/><path fill="#FBBC05" d="M4.5 10.52a4.8 4.8 0 010-3.04V5.41H1.83a8 8 0 000 7.18l2.67-2.07z"/><path fill="#EA4335" d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 001.83 5.4L4.5 7.49a4.77 4.77 0 014.48-3.31z"/></svg>
+                Sign up with Google
+            </button>
+
+            <div class="auth-divider"><span>or create with email</span></div>
+
+            <!-- Form -->
+            <form id="registerForm" class="auth-form" novalidate>
+                <div class="form-row-2">
+                    <div class="form-field" id="ff-fname">
+                        <label class="field-label" for="fname">
+                            <i class="fas fa-user"></i> First Name
+                        </label>
+                        <input type="text" id="fname" class="field-input" placeholder="Rahul" autocomplete="given-name" required>
+                        <div class="field-error" id="fnameErr"></div>
+                    </div>
+                    <div class="form-field" id="ff-lname">
+                        <label class="field-label" for="lname">
+                            <i class="fas fa-user"></i> Last Name
+                        </label>
+                        <input type="text" id="lname" class="field-input" placeholder="Verma" autocomplete="family-name" required>
+                        <div class="field-error" id="lnameErr"></div>
+                    </div>
+                </div>
+
+                <div class="form-field" id="ff-email">
+                    <label class="field-label" for="email">
+                        <i class="fas fa-envelope"></i> Email Address
+                    </label>
+                    <input type="email" id="email" class="field-input" placeholder="you@email.com" autocomplete="email" required>
+                    <div class="field-error" id="emailErr"></div>
+                </div>
+
+                <div class="form-field" id="ff-edu">
+                    <label class="field-label" for="eduLevel">
+                        <i class="fas fa-graduation-cap"></i> Current Education Level
+                    </label>
+                    <div class="field-select-wrap">
+                        <select id="eduLevel" class="field-input field-select" required>
+                            <option value="">— Select your level —</option>
+                            <option value="10th">Class 10th</option>
+                            <option value="12th-science">Class 12th – Science (PCM/PCB)</option>
+                            <option value="12th-commerce">Class 12th – Commerce</option>
+                            <option value="12th-arts">Class 12th – Arts / Humanities</option>
+                            <option value="diploma">Diploma / Polytechnic</option>
+                            <option value="graduation">Graduation (Bachelor's)</option>
+                            <option value="postgrad">Post-Graduation (Master's)</option>
+                        </select>
+                        <i class="fas fa-chevron-down field-select-arrow"></i>
+                    </div>
+                    <div class="field-error" id="eduErr"></div>
+                </div>
+
+                <div class="form-field" id="ff-password">
+                    <label class="field-label" for="password">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <div class="field-pw-wrap">
+                        <input type="password" id="password" class="field-input" placeholder="Create a strong password" autocomplete="new-password" required>
+                        <button type="button" class="pw-toggle" id="pwToggle" aria-label="Show password">
+                            <i class="fas fa-eye" id="pwIcon"></i>
+                        </button>
+                    </div>
+                    <!-- Password strength -->
+                    <div class="pw-strength" id="pwStrength">
+                        <div class="pw-bar"><div class="pw-fill" id="pwFill"></div></div>
+                        <span class="pw-label" id="pwLabel">Enter a password</span>
+                    </div>
+                    <div class="field-error" id="passwordErr"></div>
+                </div>
+
+                <label class="remember-row">
+                    <input type="checkbox" id="terms" class="remember-check" required>
+                    <span class="remember-custom"></span>
+                    <span class="remember-label">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                </label>
+
+                <button type="submit" class="auth-submit" id="registerBtn">
+                    <span class="btn-text"><i class="fas fa-rocket"></i> Create My Account</span>
+                    <span class="btn-loader" style="display:none"><i class="fas fa-spinner fa-spin"></i></span>
+                </button>
+            </form>
+
+            <p class="auth-switch">Already have an account? <a href="login.html">Sign in</a></p>
+        </div>
+    </main>
+</div>
+
+<script>
+// Mobile nav
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobilePanel = document.getElementById('mobilePanel');
+const closeMobileNav = () => { 
+    if(!mobileOverlay) return;
+    mobileOverlay.classList.remove('open'); 
+    mobilePanel.classList.remove('open'); 
+    document.body.style.overflow = ''; 
+    document.body.classList.remove('mobile-menu-open'); 
+};
+const openMobileNav = () => { 
+    mobileOverlay.classList.add('open'); 
+    mobilePanel.classList.add('open'); 
+    document.body.style.overflow = 'hidden'; 
+    document.body.classList.add('mobile-menu-open'); 
+};
+if(document.getElementById('hamburger')) {
+    document.getElementById('hamburger').addEventListener('click', openMobileNav);
+    document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+    mobileOverlay.addEventListener('click', (e) => { if(e.target.id === 'mobilePanel' || e.target.closest('#mobilePanel')) return; closeMobileNav(); });
+    document.querySelectorAll('.nav-mobile-links a').forEach(l => l.addEventListener('click', closeMobileNav));
+}
+</script>
+
+<script src="../scripts/auth.js"></script>
+<script src="../scripts/nav-auth.js"></script></body>
+</html>

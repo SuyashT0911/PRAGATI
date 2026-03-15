@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Education Paths – Pragati</title>
+    <meta name="description" content="Explore 200+ education paths across all levels — from Class 10th to PhD. Find your perfect route with Pragati's comprehensive path catalog.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/pages.css?v=2026" >
+    <link rel="stylesheet" href="../styles/explore.css">
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-icon">प्र</span>
+            <span class="logo-text">Pragati</span>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item nav-has-dropdown">
+                <a href="browse-paths.html" class="nav-link active">Explore <i class="fas fa-chevron-down" style="font-size:0.7rem"></i></a>
+                <div class="nav-dropdown">
+                    <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+                    <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+                    <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+                    <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+                    <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-auth">
+            <a href="login.html" class="nav-login-btn">Login</a>
+            <a href="register.html" class="nav-signup-btn">Start Free</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile-overlay" id="mobileOverlay">
+    <div class="nav-mobile-panel" id="mobilePanel">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">प्र</span><span class="logo-text">Pragati</span></a>
+            <button class="nav-mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="nav-mobile-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+            <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+            <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+            <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+            <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="nav-mobile-auth">
+            <a href="login.html" class="nmb-login">Login</a>
+            <a href="register.html" class="nmb-signup">Start Free</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Hero -->
+<section class="page-hero">
+    <div class="page-hero-blob page-hero-blob-1"></div>
+    <div class="page-hero-blob page-hero-blob-2"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <div class="page-hero-eyebrow"><i class="fas fa-compass"></i> Interactive Path Catalog</div>
+            <h1 class="page-hero-title">Explore <span class="gradient-text">200+ Education Paths</span></h1>
+            <p class="page-hero-sub">Search our comprehensive catalog of education routes and discover the perfect next step for your career. Discover trending and high-growth opportunities across India.</p>
+
+            <!-- Search -->
+            <div class="explore-search-wrap">
+                <i class="fas fa-search explore-search-icon"></i>
+                <input type="text" class="explore-search" id="pathSearch" placeholder="Search paths, courses, streams... e.g. B.Tech, Law, MBA">
+                <button class="explore-search-btn" onclick="performSearch()"><i class="fas fa-search"></i> Search</button>
+            </div>
+
+            <!-- Quick filter pills -->
+            <div class="explore-quick-filters">
+                <button class="qf-pill active" data-filter="all">All Paths</button>
+                <button class="qf-pill" data-filter="science">🔬 Science</button>
+                <button class="qf-pill" data-filter="commerce">📊 Commerce</button>
+                <button class="qf-pill" data-filter="arts">🎨 Arts</button>
+                <button class="qf-pill" data-filter="diploma">🔧 Diploma</button>
+                <button class="qf-pill" data-filter="postgrad">🎓 Post-Grad</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Level Overview Removed for Browse Page -->
+
+<!-- Path Catalog with Tabs -->
+<section class="section" id="streams">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag"><i class="fas fa-th-large"></i> Path Catalog</span>
+            <h2>Explore <span class="gradient-text">All Paths</span></h2>
+            <p>Filter paths by stream or search to find your perfect match.</p>
+        </div>
+
+        <!-- Level tabs -->
+        <div class="level-tabs reveal" id="streamTabs">
+            <button class="level-tab active" data-tab="all">All <span class="tab-count">12</span></button>
+            <button class="level-tab" data-tab="science">Science <span class="tab-count">5</span></button>
+            <button class="level-tab" data-tab="commerce">Commerce <span class="tab-count">4</span></button>
+            <button class="level-tab" data-tab="arts">Arts <span class="tab-count">3</span></button>
+            <button class="level-tab" data-tab="diploma">Diploma <span class="tab-count">2</span></button>
+            <button class="level-tab" data-tab="postgrad">Post-Grad <span class="tab-count">3</span></button>
+        </div>
+
+        <!-- Path cards -->
+        <div class="paths-grid" id="pathsGrid"></div>
+
+        <!-- Load more -->
+        <div style="text-align:center;margin-top:3rem" class="reveal">
+            <p style="color:var(--gray-500);margin-bottom:1.25rem">Showing a preview — 200+ paths available in total</p>
+            <a href="path-explorer.html" class="btn btn-primary btn-pill btn-lg">
+                <i class="fas fa-route"></i> Use Interactive Path Explorer
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Band -->
+<section class="section-sm" style="background:var(--gray-50)">
+    <div class="container">
+        <div class="explore-cta-band reveal">
+            <h2>Not Sure Which Path is Right for You?</h2>
+            <p>Use our interactive Path Explorer — select your education level and instantly see every option available to you.</p>
+            <a href="path-explorer.html" class="btn-white">
+                <i class="fas fa-compass"></i> Try Interactive Explorer
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+                    <span class="logo-icon">प्र</span><span class="logo-text" style="color:white">Pragati</span>
+                </a>
+                <p>Empowering every Indian student to make informed decisions about education and career — from Class 10 to PhD.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="browse-paths.html">Browse All Paths</a>
+                <a href="path-explorer.html">Interactive Explorer</a>
+                <a href="explore.html#by-level">By Education Level</a>
+                <a href="explore.html#streams">By Stream</a>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign Up Free</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">College Rankings</a>
+                <a href="#">Scholarship Guide</a>
+                <a href="#">Entrance Exam Dates</a>
+                <a href="#">Career Aptitude Test</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Pragati. All rights reserved. Made with ❤️ for Indian students.</span>
+            <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+// Path data
+const PATHS = [
+    { id:1, title:'B.Tech / B.E.', sub:'Bachelor of Technology', stream:'science', icon:'fas fa-microchip', color:'linear-gradient(135deg,#818cf8,#6366f1)', desc:'Engineering across CS, ECE, Mech, Civil, Chem and more. Top MNC placements.', duration:'4 yrs', type:'UG Degree', salary:'₹4L–₹18L/yr', banner:'science' },
+    { id:2, title:'MBBS / BDS', sub:'Medical / Dental Science', stream:'science', icon:'fas fa-heartbeat', color:'linear-gradient(135deg,#f472b6,#ec4899)', desc:'Premier medical degrees. Requires NEET UG. Opens path to being a doctor.', duration:'5.5 yrs', type:'UG Degree', salary:'₹8L–₹50L+/yr', banner:'science' },
+    { id:3, title:'B.Sc Science', sub:'Bachelor of Science', stream:'science', icon:'fas fa-flask', color:'linear-gradient(135deg,#34d399,#0d9488)', desc:'Pure science in Physics, Chemistry, Maths or Biology. Gateway to research & GATE.', duration:'3 yrs', type:'UG Degree', salary:'₹3L–₹10L/yr', banner:'science' },
+    { id:4, title:'B.Arch', sub:'Bachelor of Architecture', stream:'science', icon:'fas fa-building', color:'linear-gradient(135deg,#fb923c,#ef4444)', desc:'Design and engineering combined. 5-year creative technical degree.', duration:'5 yrs', type:'UG Degree', salary:'₹4L–₹15L/yr', banner:'science'},
+    { id:5, title:'B.Pharm', sub:'Bachelor of Pharmacy', stream:'science', icon:'fas fa-pills', color:'linear-gradient(135deg,#60a5fa,#3b82f6)', desc:'Pharmaceutical sciences, drug development, and healthcare industry career.', duration:'4 yrs', type:'UG Degree', salary:'₹3L–₹8L/yr', banner:'science'},
+    { id:6, title:'CA (Chartered Accountancy)', sub:'Professional Certification', stream:'commerce', icon:'fas fa-calculator', color:'linear-gradient(135deg,#fbbf24,#f59e0b)', desc:'India\'s most prestigious finance qualification. Opens doors to Big 4 firms.', duration:'3–5 yrs', type:'Professional', salary:'₹7L–₹25L/yr', banner:'commerce' },
+    { id:7, title:'BBA / BMS', sub:'Bachelor of Business Admin', stream:'commerce', icon:'fas fa-briefcase', color:'linear-gradient(135deg,#a78bfa,#7c3aed)', desc:'Business foundation for future managers and entrepreneurs. MBA gateway.', duration:'3 yrs', type:'UG Degree', salary:'₹3L–₹8L/yr', banner:'commerce' },
+    { id:8, title:'B.Com', sub:'Bachelor of Commerce', stream:'commerce', icon:'fas fa-chart-bar', color:'linear-gradient(135deg,#fbbf24,#f59e0b)', desc:'Core commerce — accounting, business law, finance. Versatile foundation.', duration:'3 yrs', type:'UG Degree', salary:'₹3L–₹7L/yr', banner:'commerce' },
+    { id:9, title:'Economics (Hons)', sub:'Bachelor of Arts / Science', stream:'commerce', icon:'fas fa-chart-line', color:'linear-gradient(135deg,#34d399,#0d9488)', desc:'Data-driven analysis of markets, policy, and global finance. IES gateway.', duration:'3 yrs', type:'UG Degree', salary:'₹4L–₹12L/yr', banner:'commerce' },
+    { id:10, title:'BA LLB / LLB', sub:'Bachelor of Laws', stream:'arts', icon:'fas fa-balance-scale', color:'linear-gradient(135deg,#f472b6,#ec4899)', desc:'Integrated law degree. Practice advocacy, corporate law or civil services.', duration:'5 yrs', type:'UG Degree', salary:'₹4L–₹20L/yr', banner:'arts' },
+    { id:11, title:'Mass Communication', sub:'BA / BJMC', stream:'arts', icon:'fas fa-newspaper', color:'linear-gradient(135deg,#fb923c,#ef4444)', desc:'Journalism, PR, digital media. Opens doors in news, advertising, and OTT.', duration:'3 yrs', type:'UG Degree', salary:'₹3L–₹10L/yr', banner:'arts' },
+    { id:12, title:'B.Des / NID', sub:'Bachelor of Design', stream:'arts', icon:'fas fa-pencil-ruler', color:'linear-gradient(135deg,#c084fc,#a855f7)', desc:'Product, graphic, UX/UI, or fashion design. Creative careers in top firms.', duration:'4 yrs', type:'UG Degree', salary:'₹4L–₹15L/yr', banner:'arts' },
+    { id:13, title:'Lateral Entry B.Tech', sub:'Diploma → Engineering', stream:'diploma', icon:'fas fa-tools', color:'linear-gradient(135deg,#60a5fa,#3b82f6)', desc:'Skip first year of B.Tech directly from diploma. Join top engineering colleges.', duration:'3 yrs', type:'UG Degree', salary:'₹4L–₹15L/yr', banner:'diploma' },
+    { id:14, title:'AMIE', sub:'Associate Member Engineers', stream:'diploma', icon:'fas fa-hard-hat', color:'linear-gradient(135deg,#34d399,#0d9488)', desc:'Equivalent to B.Tech for diploma holders. Work and study simultaneously.', duration:'3–5 yrs', type:'Professional', salary:'₹3L–₹10L/yr', banner:'diploma' },
+    { id:15, title:'MBA', sub:'Master of Business Admin', stream:'postgrad', icon:'fas fa-chart-line', color:'linear-gradient(135deg,#a78bfa,#7c3aed)', desc:'IIM/top B-school MBA. Leadership, strategy, finance. Top corporate roles.', duration:'2 yrs', type:'PG Degree', salary:'₹8L–₹40L+/yr', banner:'postgrad' },
+    { id:16, title:'M.Tech / ME', sub:'Master of Technology', stream:'postgrad', icon:'fas fa-cogs', color:'linear-gradient(135deg,#818cf8,#6366f1)', desc:'Specialization after B.Tech. GATE key. Research and senior engineering roles.', duration:'2 yrs', type:'PG Degree', salary:'₹8L–₹25L/yr', banner:'postgrad' },
+    { id:17, title:'IAS / IPS (UPSC)', sub:'Civil Services Examination', stream:'postgrad', icon:'fas fa-landmark', color:'linear-gradient(135deg,#fb923c,#ef4444)', desc:'India\'s most competitive exam. District Collector, IPS, IFS and beyond.', duration:'1–3 yrs prep', type:'Govt Service', salary:'₹7L–₹20L/yr', banner:'postgrad' },
+];
+
+let currentStream = 'all';
+let currentSearch  = '';
+
+function renderCards(list) {
+    const grid = document.getElementById('pathsGrid');
+    if (!list.length) {
+        grid.innerHTML = `<div class="no-results"><i class="fas fa-search"></i><p>No paths found. Try a different keyword or filter.</p></div>`;
+        return;
+    }
+    grid.innerHTML = list.map(p => `
+        <div class="path-card reveal" onclick="window.location.href='path-explorer.html'">
+            <div class="path-card-banner ${p.banner}"></div>
+            <div class="path-card-body">
+                <div class="path-card-icon" style="background:${p.color}"><i class="${p.icon}"></i></div>
+                <div class="path-card-title">${p.title}</div>
+                <div class="path-card-subtitle">${p.sub}</div>
+                <div class="path-card-desc">${p.desc}</div>
+                <div class="path-card-meta">
+                    <span><i class="fas fa-clock"></i> ${p.duration}</span>
+                    <span><i class="fas fa-graduation-cap"></i> ${p.type}</span>
+                </div>
+                <div class="path-card-footer">
+                    <span class="path-salary"><i class="fas fa-rupee-sign"></i> ${p.salary}</span>
+                    <span class="path-link">Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    revealCards();
+}
+
+function filterPaths() {
+    let list = PATHS;
+    if (currentStream !== 'all') list = list.filter(p => p.stream === currentStream);
+    if (currentSearch) {
+        const q = currentSearch.toLowerCase();
+        list = list.filter(p =>
+            p.title.toLowerCase().includes(q) ||
+            p.sub.toLowerCase().includes(q) ||
+            p.desc.toLowerCase().includes(q)
+        );
+    }
+    renderCards(list);
+    // Update tab counts
+    document.querySelectorAll('.level-tab').forEach(tab => {
+        const t = tab.dataset.tab;
+        const cnt = t==='all' ? PATHS.length : PATHS.filter(p=>p.stream===t).length;
+        const countEl = tab.querySelector('.tab-count');
+        if(countEl) countEl.textContent = cnt;
+    });
+}
+
+function performSearch() {
+    currentSearch = document.getElementById('pathSearch').value.trim();
+    filterPaths();
+    document.getElementById('streams').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// Tabs
+document.querySelectorAll('.level-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.level-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentStream = tab.dataset.tab;
+        filterPaths();
+    });
+});
+
+// Quick filter pills
+document.querySelectorAll('.qf-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+        document.querySelectorAll('.qf-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentStream = pill.dataset.filter;
+        // sync tabs
+        document.querySelectorAll('.level-tab').forEach(t => {
+            t.classList.toggle('active', t.dataset.tab === currentStream);
+        });
+        filterPaths();
+        document.getElementById('streams').scrollIntoView({ behavior:'smooth' });
+    });
+});
+
+document.getElementById('pathSearch').addEventListener('keydown', e => {
+    if(e.key==='Enter') performSearch();
+});
+
+function filterByLevel(level) {
+    currentStream = level;
+    document.querySelectorAll('.level-tab').forEach(t => t.classList.toggle('active', t.dataset.tab===level));
+    filterPaths();
+    document.getElementById('streams').scrollIntoView({ behavior:'smooth' });
+}
+
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+});
+
+// Scroll top
+document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+// Mobile nav
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobilePanel = document.getElementById('mobilePanel');
+const closeMobileNav = () => { 
+    mobileOverlay.classList.remove('open'); 
+    mobilePanel.classList.remove('open'); 
+    document.body.style.overflow = ''; 
+    document.body.classList.remove('mobile-menu-open'); 
+};
+const openMobileNav = () => { 
+    mobileOverlay.classList.add('open'); 
+    mobilePanel.classList.add('open'); 
+    document.body.style.overflow = 'hidden'; 
+    document.body.classList.add('mobile-menu-open'); 
+};
+document.getElementById('hamburger').addEventListener('click', openMobileNav);
+document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+mobileOverlay.addEventListener('click', (e) => { if(e.target.id === 'mobilePanel' || e.target.closest('#mobilePanel')) return; closeMobileNav(); });
+document.querySelectorAll('.nav-mobile-links a').forEach(l => l.addEventListener('click', closeMobileNav));
+
+// Reveal on scroll
+function revealCards() {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold:0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// Init
+filterPaths();
+revealCards();
+</script>
+<script src="../scripts/nav-auth.js"></script></body>
+</html>
+

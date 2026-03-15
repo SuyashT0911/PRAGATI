@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – Pragati | Get in Touch</title>
+    <meta name="description" content="Have a question about Pragati? Contact our team. We typically respond within 24 hours.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/pages.css?v=2026" >
+    <link rel="stylesheet" href="../styles/contact.css">
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-icon">प्र</span>
+            <span class="logo-text">Pragati</span>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item nav-has-dropdown">
+                <a href="browse-paths.html" class="nav-link">Explore <i class="fas fa-chevron-down" style="font-size:0.7rem"></i></a>
+                <div class="nav-dropdown">
+                    <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+                    <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+                    <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+                    <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+                    <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+        <div class="nav-auth">
+            <a href="login.html" class="nav-login-btn">Login</a>
+            <a href="register.html" class="nav-signup-btn">Start Free</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile-overlay" id="mobileOverlay">
+    <div class="nav-mobile-panel" id="mobilePanel">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">प्र</span><span class="logo-text">Pragati</span></a>
+            <button class="nav-mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="nav-mobile-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+            <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+            <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+            <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+            <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="nav-mobile-auth">
+            <a href="login.html" class="nmb-login">Login</a>
+            <a href="register.html" class="nmb-signup">Start Free</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Hero -->
+<section class="page-hero">
+    <div class="page-hero-blob page-hero-blob-1"></div>
+    <div class="page-hero-blob page-hero-blob-2"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <div class="page-hero-eyebrow"><i class="fas fa-envelope"></i> Get in Touch</div>
+            <h1 class="page-hero-title">We'd Love to <span class="gradient-text">Hear From You</span></h1>
+            <p class="page-hero-sub">Have a question, suggestion, or partnership inquiry? Our team typically responds within 24 hours — sometimes much faster.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact section -->
+<section class="section">
+    <div class="container">
+        <div class="contact-layout">
+
+            <!-- Form -->
+            <div class="contact-form-card reveal">
+                <h2>Send Us a Message</h2>
+                <p>Fill in the form below and we'll get back to you as soon as possible.</p>
+
+                <form id="contactForm" novalidate>
+                    <div class="cf-row">
+                        <div class="cf-field">
+                            <label class="cf-label" for="cfName"><i class="fas fa-user"></i> Full Name *</label>
+                            <input type="text" id="cfName" class="cf-input" placeholder="Rahul Verma" required>
+                        </div>
+                        <div class="cf-field">
+                            <label class="cf-label" for="cfEmail"><i class="fas fa-envelope"></i> Email *</label>
+                            <input type="email" id="cfEmail" class="cf-input" placeholder="you@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="cf-field">
+                        <label class="cf-label" for="cfSubject"><i class="fas fa-tag"></i> Subject *</label>
+                        <div class="cf-select-wrap">
+                            <select id="cfSubject" required class="cf-input" style="padding-right:2.5rem">
+                                <option value="">— Select a topic —</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="path">Education Path Question</option>
+                                <option value="course">Course or Certificate</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="partnership">Partnership / Collaboration</option>
+                                <option value="content">Content Suggestion</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="cf-field">
+                        <label class="cf-label" for="cfMessage"><i class="fas fa-comment-alt"></i> Message *</label>
+                        <textarea id="cfMessage" class="cf-input" placeholder="Tell us how we can help you..." required></textarea>
+                    </div>
+
+                    <div style="display:flex;align-items:flex-start;gap:.6rem;margin-bottom:1.5rem;font-size:.82rem;color:var(--gray-500)">
+                        <input type="checkbox" id="cfConsent" style="width:16px;height:16px;margin-top:2px;accent-color:var(--primary);flex-shrink:0" required>
+                        <label for="cfConsent">I agree that Pragati may use my contact information to respond to this inquiry. See our <a href="#" style="color:var(--primary)">Privacy Policy</a>.</label>
+                    </div>
+
+                    <button type="submit" class="cf-submit" id="cfSubmit">
+                        <i class="fas fa-paper-plane"></i>
+                        <span id="cfBtnText">Send Message</span>
+                        <span id="cfBtnLoader" style="display:none"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+
+                <!-- Success -->
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Message Sent!</h3>
+                    <p>Thank you for reaching out. We'll reply to <span id="successEmail" style="font-weight:700;color:var(--primary)"></span> within 24 hours.</p>
+                    <button onclick="resetForm()" class="btn btn-secondary btn-pill" style="margin-top:1.5rem;display:inline-flex">
+                        <i class="fas fa-redo"></i> Send Another
+                    </button>
+                </div>
+            </div>
+
+            <!-- Info sidebar -->
+            <div class="contact-info reveal" style="--delay:.1s">
+                <div class="ci-card">
+                    <div class="ci-icon" style="background:linear-gradient(135deg,#818cf8,#6366f1)"><i class="fas fa-envelope"></i></div>
+                    <div class="ci-text">
+                        <strong>Email Us</strong>
+                        <span>General inquiries and support</span>
+                        <a href="mailto:hello@pragati.edu.in">hello@pragati.edu.in</a>
+                    </div>
+                </div>
+
+                <div class="ci-card">
+                    <div class="ci-icon" style="background:linear-gradient(135deg,#34d399,#0d9488)"><i class="fas fa-clock"></i></div>
+                    <div class="ci-text">
+                        <strong>Response Time</strong>
+                        <span>We typically reply within 24 hours on weekdays.</span>
+                        <span>Mon–Fri: 9am–6pm IST</span>
+                    </div>
+                </div>
+
+                <div class="ci-card">
+                    <div class="ci-icon" style="background:linear-gradient(135deg,#fbbf24,#f59e0b)"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="ci-text">
+                        <strong>Location</strong>
+                        <span>Pragati Education Tech Pvt. Ltd.</span>
+                        <span>Raipur, Chhattisgarh, India</span>
+                    </div>
+                </div>
+
+                <div class="ci-card">
+                    <div class="ci-icon" style="background:linear-gradient(135deg,#f472b6,#ec4899)"><i class="fas fa-share-alt"></i></div>
+                    <div class="ci-text">
+                        <strong>Follow Us</strong>
+                        <span>Stay updated on new paths, courses and announcements</span>
+                        <div class="social-row" style="margin-top:.75rem">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick links -->
+                <div style="background:linear-gradient(135deg,var(--p50),#f0fdfa);border:1px solid var(--p100,#e0e7ff);border-radius:16px;padding:1.5rem">
+                    <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:var(--gray-900);margin-bottom:1rem;font-size:.9rem">
+                        <i class="fas fa-bolt" style="color:var(--p600);margin-right:.4rem"></i> Quick Help
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:.625rem">
+                        <a href="explore.html" style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--gray-700);padding:.5rem .75rem;border-radius:8px;background:white;border:1px solid var(--gray-200);transition:all .2s" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--gray-700)'">
+                            <i class="fas fa-route" style="color:var(--p400)"></i> Browse education paths
+                        </a>
+                        <a href="path-explorer.html" style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--gray-700);padding:.5rem .75rem;border-radius:8px;background:white;border:1px solid var(--gray-200);transition:all .2s" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--gray-700)'">
+                            <i class="fas fa-compass" style="color:var(--p400)"></i> Use path explorer
+                        </a>
+                        <a href="register.html" style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--gray-700);padding:.5rem .75rem;border-radius:8px;background:white;border:1px solid var(--gray-200);transition:all .2s" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--gray-700)'">
+                            <i class="fas fa-user-plus" style="color:var(--p400)"></i> Create free account
+                        </a>
+                        <a href="about.html" style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--gray-700);padding:.5rem .75rem;border-radius:8px;background:white;border:1px solid var(--gray-200);transition:all .2s" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--gray-700)'">
+                            <i class="fas fa-info-circle" style="color:var(--p400)"></i> Learn about Pragati
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--gray-50)">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag"><i class="fas fa-question-circle"></i> FAQ</span>
+            <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+            <p>Quick answers to the most common questions we receive.</p>
+        </div>
+        <div class="faq-list reveal">
+            <div class="faq-item">
+                <div class="faq-question">How quickly do you respond to messages? <i class="fas fa-plus faq-icon"></i></div>
+                <div class="faq-answer">We aim to respond within 24 hours on weekdays (Mon–Fri, 9am–6pm IST). On weekends and holidays, we may take up to 48 hours. Complex technical issues may take slightly longer.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">I found an error in a path or salary data. How do I report it? <i class="fas fa-plus faq-icon"></i></div>
+                <div class="faq-answer">Please use the contact form above and select "Content Suggestion" as the topic. Tell us the path name and what information seems incorrect. We review and update data quarterly based on your feedback.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I partner with Pragati for college awareness programs? <i class="fas fa-plus faq-icon"></i></div>
+                <div class="faq-answer">Absolutely! We love collaborating with schools, colleges, NGOs, and education organizations. Select "Partnership / Collaboration" in the subject dropdown and tell us about your organization and vision.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">I'm having trouble logging into my account. Who do I contact? <i class="fas fa-plus faq-icon"></i></div>
+                <div class="faq-answer">Use the contact form and select "Technical Issue". Include your registered email address in the message. Our team will reset your access within 24 hours.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I suggest a new education path or course to add? <i class="fas fa-plus faq-icon"></i></div>
+                <div class="faq-answer">Yes, we love suggestions! Select "Content Suggestion" and describe the path or course you'd like to see. If enough students request the same thing, we prioritize it for our next update cycle.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+                    <span class="logo-icon">प्र</span><span class="logo-text" style="color:white">Pragati</span>
+                </a>
+                <p>Empowering every Indian student to make informed decisions about education and career — from Class 10 to PhD.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="browse-paths.html">Browse All Paths</a>
+                <a href="path-explorer.html">Interactive Explorer</a>
+                <a href="explore.html#by-level">By Education Level</a>
+                <a href="explore.html#streams">By Stream</a>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign Up Free</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">College Rankings</a>
+                <a href="#">Scholarship Guide</a>
+                <a href="#">Entrance Exam Dates</a>
+                <a href="#">Career Aptitude Test</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Pragati. All rights reserved. Made with ❤️ for Indian students.</span>
+            <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+        </div>
+    </div>
+</footer>
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+// Navbar
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+});
+document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+// Mobile nav
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobilePanel = document.getElementById('mobilePanel');
+const closeMobileNav = () => { 
+    mobileOverlay.classList.remove('open'); 
+    mobilePanel.classList.remove('open'); 
+    document.body.style.overflow = ''; 
+    document.body.classList.remove('mobile-menu-open'); 
+};
+const openMobileNav = () => { 
+    mobileOverlay.classList.add('open'); 
+    mobilePanel.classList.add('open'); 
+    document.body.style.overflow = 'hidden'; 
+    document.body.classList.add('mobile-menu-open'); 
+};
+document.getElementById('hamburger').addEventListener('click', openMobileNav);
+document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+mobileOverlay.addEventListener('click', (e) => { if(e.target.id === 'mobilePanel' || e.target.closest('#mobilePanel')) return; closeMobileNav(); });
+document.querySelectorAll('.nav-mobile-links a').forEach(l => l.addEventListener('click', closeMobileNav));
+
+// FAQ
+document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if(!wasOpen) item.classList.add('open');
+    });
+});
+
+// Contact form
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const name    = document.getElementById('cfName').value.trim();
+    const email   = document.getElementById('cfEmail').value.trim();
+    const subject = document.getElementById('cfSubject').value;
+    const msg     = document.getElementById('cfMessage').value.trim();
+    const consent = document.getElementById('cfConsent').checked;
+
+    let ok = true;
+    [['cfName',name],['cfEmail',email],['cfSubject',subject],['cfMessage',msg]].forEach(([id,v]) => {
+        const el = document.getElementById(id);
+        if(!v) { el.classList.add('error'); ok = false; }
+        else el.classList.remove('error');
+    });
+    if(!consent) { alert('Please agree to the privacy policy to send your message.'); ok = false; }
+    if(!ok) return;
+
+    // Loading
+    document.getElementById('cfBtnText').style.display = 'none';
+    document.getElementById('cfBtnLoader').style.display = '';
+    document.getElementById('cfSubmit').disabled = true;
+
+    await new Promise(r => setTimeout(r, 1600));
+
+    // Success
+    form.style.display = 'none';
+    document.getElementById('successEmail').textContent = email;
+    const s = document.getElementById('formSuccess');
+    s.style.display = 'block';
+    s.style.animation = 'fadeUp .5s ease both';
+});
+
+function resetForm() {
+    document.getElementById('contactForm').reset();
+    document.getElementById('contactForm').style.display = '';
+    document.getElementById('formSuccess').style.display = 'none';
+    document.getElementById('cfBtnText').style.display = '';
+    document.getElementById('cfBtnLoader').style.display = 'none';
+    document.getElementById('cfSubmit').disabled = false;
+}
+
+// Clear error on input
+document.querySelectorAll('.cf-input').forEach(i => {
+    i.addEventListener('input', () => i.classList.remove('error'));
+});
+
+// Reveal
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold:.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script src="../scripts/nav-auth.js"></script></body>
+</html>
+

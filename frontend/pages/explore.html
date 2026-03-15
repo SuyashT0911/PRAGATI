@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Education Paths by Level – Pragati</title>
+    <meta name="description" content="Browse education paths categorized by education level. Explore courses after 10th, 12th, diploma, and graduation. Find the perfect path for your career.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/pages.css?v=2026" >
+    <link rel="stylesheet" href="../styles/explore.css">
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-icon">प्र</span>
+            <span class="logo-text">Pragati</span>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item nav-has-dropdown">
+                <a href="browse-paths.html" class="nav-link active">Explore <i class="fas fa-chevron-down" style="font-size:0.7rem"></i></a>
+                <div class="nav-dropdown">
+                    <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+                    <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+                    <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+                    <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+                    <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-auth">
+            <a href="login.html" class="nav-login-btn">Login</a>
+            <a href="register.html" class="nav-signup-btn">Start Free</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile-overlay" id="mobileOverlay">
+    <div class="nav-mobile-panel" id="mobilePanel">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">प्र</span><span class="logo-text">Pragati</span></a>
+            <button class="nav-mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="nav-mobile-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="explore.html" class="active"><i class="fas fa-compass"></i> Explore Hub</a>
+            <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+            <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+            <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+            <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="nav-mobile-auth">
+            <a href="login.html" class="nmb-login">Login</a>
+            <a href="register.html" class="nmb-signup">Start Free</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Hero -->
+<section class="page-hero">
+    <div class="page-hero-blob page-hero-blob-1"></div>
+    <div class="page-hero-blob page-hero-blob-2"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <div class="page-hero-eyebrow"><i class="fas fa-layer-group"></i> Education Path Categories</div>
+            <h1 class="page-hero-title">Browse Paths <span class="gradient-text">By Education Level</span></h1>
+            <p class="page-hero-sub">Select your current education stage below to explore all available streams, courses, and career paths. Discover what's next for you.</p>
+
+            <!-- CTA -->
+            <div style="margin-top:2rem">
+                <a href="browse-paths.html" class="btn btn-secondary btn-pill btn-lg" style="padding:1rem 2rem; font-size:1.05rem;">
+                    <i class="fas fa-search"></i> Search All Paths
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- By Education Level Overview -->
+<section class="section" id="by-level" style="background:var(--gray-50,#f8fafc)">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag"><i class="fas fa-layer-group"></i> Browse by Level</span>
+            <h2>Every Stage of Your <span class="gradient-text">Education Journey</span></h2>
+            <p>Click any level to explore all available paths, courses, and career options for that stage.</p>
+        </div>
+
+        <div class="level-overview-grid">
+            <div class="lv-card class10 reveal" style="--delay:0.05s" onclick="filterByLevel('10th')">
+                <div class="lv-icon" style="background:linear-gradient(135deg,#34d399,#0d9488)"><i class="fas fa-school"></i></div>
+                <h3>After Class 10th</h3>
+                <p>Choose the right stream — Science, Commerce, Arts or Vocational to set the foundation right.</p>
+                <span class="lv-count" style="color:var(--t600)">12 paths available</span>
+                <span class="lv-link">Explore <i class="fas fa-arrow-right"></i></span>
+            </div>
+            <div class="lv-card science reveal" style="--delay:0.1s" onclick="filterByLevel('12th-science')">
+                <div class="lv-icon" style="background:linear-gradient(135deg,#818cf8,#6366f1)"><i class="fas fa-flask"></i></div>
+                <h3>After 12th Science</h3>
+                <p>PCM, PCB or PCMB — unlock every undergraduate path from B.Tech to MBBS to B.Sc.</p>
+                <span class="lv-count" style="color:var(--p600)">45 paths available</span>
+                <span class="lv-link">Explore <i class="fas fa-arrow-right"></i></span>
+            </div>
+            <div class="lv-card commerce reveal" style="--delay:0.15s" onclick="filterByLevel('12th-commerce')">
+                <div class="lv-icon" style="background:linear-gradient(135deg,#fbbf24,#f59e0b)"><i class="fas fa-chart-pie"></i></div>
+                <h3>After 12th Commerce</h3>
+                <p>CA, B.Com, BBA, MBA path, Economics — the full financial and business world awaits.</p>
+                <span class="lv-count" style="color:var(--a600)">28 paths available</span>
+                <span class="lv-link">Explore <i class="fas fa-arrow-right"></i></span>
+            </div>
+            <div class="lv-card arts reveal" style="--delay:0.2s" onclick="filterByLevel('12th-arts')">
+                <div class="lv-icon" style="background:linear-gradient(135deg,#f472b6,#ec4899)"><i class="fas fa-palette"></i></div>
+                <h3>After 12th Arts</h3>
+                <p>Law, journalism, psychology, design, civil services — arts has more paths than you think.</p>
+                <span class="lv-count" style="color:#ec4899">32 paths available</span>
+                <span class="lv-link">Explore <i class="fas fa-arrow-right"></i></span>
+            </div>
+            <div class="lv-card diploma reveal" style="--delay:0.25s" onclick="filterByLevel('diploma')">
+                <div class="lv-icon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6)"><i class="fas fa-wrench"></i></div>
+                <h3>After Diploma</h3>
+                <p>Lateral entry B.Tech, AMIE, specialized certifications — your diploma is a launchpad.</p>
+                <span class="lv-count" style="color:#3b82f6">18 paths available</span>
+                <span class="lv-link">Explore <i class="fas fa-arrow-right"></i></span>
+            </div>
+            <div class="lv-card postgrad reveal" style="--delay:0.3s" onclick="filterByLevel('graduation')">
+                <div class="lv-icon" style="background:linear-gradient(135deg,#c084fc,#a855f7)"><i class="fas fa-graduation-cap"></i></div>
+                <h3>After Graduation</h3>
+                <p>MBA, M.Tech, M.Sc, Civil Services, abroad MS, research — level up your degree.</p>
+                <span class="lv-count" style="color:#a855f7">52 paths available</span>
+                <span class="lv-link">Explore <i class="fas fa-arrow-right"></i></span>
+            </div>
+            <div class="lv-card postgrad reveal" style="--delay:0.35s" onclick="filterByLevel('postgrad')">
+                <div class="lv-icon" style="background:linear-gradient(135deg,#fb923c,#ef4444)"><i class="fas fa-microscope"></i></div>
+                <h3>Post-Grad & Research</h3>
+                <p>PhD programs, fellowships, post-doctoral research, academic careers and more.</p>
+                <span class="lv-count" style="color:#ef4444">22 paths available</span>
+                <span class="lv-link">Explore <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Full Catalog Moved to browse-paths.html -->
+
+<!-- CTA Band -->
+<section class="section-sm" style="background:var(--gray-50)">
+    <div class="container">
+        <div class="explore-cta-band reveal">
+            <h2>Not Sure Which Path is Right for You?</h2>
+            <p>Use our interactive Path Explorer — select your education level and instantly see every option available to you.</p>
+            <a href="path-explorer.html" class="btn-white">
+                <i class="fas fa-compass"></i> Try Interactive Explorer
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+                    <span class="logo-icon">प्र</span><span class="logo-text" style="color:white">Pragati</span>
+                </a>
+                <p>Empowering every Indian student to make informed decisions about education and career — from Class 10 to PhD.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="browse-paths.html">Browse All Paths</a>
+                <a href="path-explorer.html">Interactive Explorer</a>
+                <a href="explore.html#by-level">By Education Level</a>
+                <a href="explore.html#streams">By Stream</a>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign Up Free</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">College Rankings</a>
+                <a href="#">Scholarship Guide</a>
+                <a href="#">Entrance Exam Dates</a>
+                <a href="#">Career Aptitude Test</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Pragati. All rights reserved. Made with ❤️ for Indian students.</span>
+            <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+function filterByLevel(level) {
+    if (['10th', '12th-science', '12th-commerce', '12th-arts', 'diploma', 'graduation', 'postgrad'].includes(level)) {
+        window.location.href = 'education-levels.html';
+    } else {
+        window.location.href = 'explore.html';
+    }
+}
+
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+});
+
+// Scroll top
+document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+// Mobile nav
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobilePanel = document.getElementById('mobilePanel');
+const closeMobileNav = () => { 
+    mobileOverlay.classList.remove('open'); 
+    mobilePanel.classList.remove('open'); 
+    document.body.style.overflow = ''; 
+    document.body.classList.remove('mobile-menu-open'); 
+};
+const openMobileNav = () => { 
+    mobileOverlay.classList.add('open'); 
+    mobilePanel.classList.add('open'); 
+    document.body.style.overflow = 'hidden'; 
+    document.body.classList.add('mobile-menu-open'); 
+};
+document.getElementById('hamburger').addEventListener('click', openMobileNav);
+document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+mobileOverlay.addEventListener('click', (e) => { if(e.target.id === 'mobilePanel' || e.target.closest('#mobilePanel')) return; closeMobileNav(); });
+document.querySelectorAll('.nav-mobile-links a').forEach(l => l.addEventListener('click', closeMobileNav));
+
+// Reveal on scroll
+function revealCards() {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold:0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+revealCards();
+</script>
+<script src="../scripts/nav-auth.js"></script></body>
+</html>
+

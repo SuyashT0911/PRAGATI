@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard — Pragati</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR (matching main site) ═══════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-icon">प्र</span>
+            <span class="logo-text">Pragati</span>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item nav-has-dropdown">
+                <a href="browse-paths.html" class="nav-link">Explore <i class="fas fa-chevron-down" style="font-size:0.7rem"></i></a>
+                <div class="nav-dropdown">
+                    <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+                    <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+                    <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-auth">
+            <a href="login.html" class="nav-login-btn">Login</a>
+            <a href="register.html" class="nav-signup-btn">Start Free</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile-overlay" id="mobileOverlay">
+    <div class="nav-mobile-panel" id="mobilePanel">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">प्र</span><span class="logo-text">Pragati</span></a>
+            <button class="nav-mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="nav-mobile-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="nav-mobile-auth">
+            <a href="login.html" class="nmb-login">Login</a>
+            <a href="register.html" class="nmb-signup">Start Free</a>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ DASHBOARD ═══════════════ -->
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="user-profile">
+            <div class="profile-image">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="user-info">
+                <h3 id="userName">Student</h3>
+                <p id="userEmail">student@pragati.com</p>
+                <span class="user-role">Student</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item active"><a href="#overview" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Overview</span></a></li>
+                <li class="nav-item"><a href="#courses" class="nav-link"><i class="fas fa-book"></i><span>My Courses</span></a></li>
+                <li class="nav-item"><a href="#progress" class="nav-link"><i class="fas fa-chart-line"></i><span>Progress</span></a></li>
+                <li class="nav-item"><a href="#certificates" class="nav-link"><i class="fas fa-certificate"></i><span>Certificates</span></a></li>
+                <li class="nav-item"><a href="#settings" class="nav-link"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Welcome back, <span id="welcomeName">Student</span>!</h1>
+                <p>Continue your learning journey</p>
+            </div>
+        </header>
+
+        <div class="dashboard-sections">
+            <!-- ═══ Overview ═══ -->
+            <section id="overview" class="dashboard-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#4f46e5,#7c3aed)"><i class="fas fa-book-open"></i></div>
+                        <div class="stat-content"><h3 id="totalCourses">0</h3><p>Courses Enrolled</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#0d9488,#059669)"><i class="fas fa-clock"></i></div>
+                        <div class="stat-content"><h3 id="totalHours">0</h3><p>Hours Learned</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)"><i class="fas fa-trophy"></i></div>
+                        <div class="stat-content"><h3 id="certificatesEarned">0</h3><p>Certificates</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#10b981,#047857)"><i class="fas fa-star"></i></div>
+                        <div class="stat-content"><h3 id="averageScore">0%</h3><p>Average Score</p></div>
+                    </div>
+                </div>
+
+                <div class="activity-section">
+                    <h3><i class="fas fa-stream" style="color:var(--primary);margin-right:0.5rem"></i>Recent Activity</h3>
+                    <div class="activity-list" id="activityList"></div>
+                </div>
+
+                <div class="quick-actions">
+                    <h3><i class="fas fa-bolt" style="color:var(--accent);margin-right:0.5rem"></i>Quick Actions</h3>
+                    <div class="actions-grid">
+                        <button class="action-btn" onclick="resumeLastCourse()"><i class="fas fa-play"></i><span>Resume Course</span></button>
+                        <button class="action-btn" onclick="browseCourses()"><i class="fas fa-search"></i><span>Browse Courses</span></button>
+                        <button class="action-btn" onclick="viewCertificates()"><i class="fas fa-certificate"></i><span>Certificates</span></button>
+                        <button class="action-btn" onclick="updateProfile()"><i class="fas fa-user-edit"></i><span>Edit Profile</span></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ My Courses ═══ -->
+            <section id="courses" class="dashboard-section">
+                <div class="courses-grid" id="userCoursesGrid"></div>
+            </section>
+
+            <!-- ═══ Progress ═══ -->
+            <section id="progress" class="dashboard-section">
+                <div class="progress-charts">
+                    <div class="chart-container">
+                        <h3>Overall Progress</h3>
+                        <div class="progress-circle">
+                            <svg width="200" height="200">
+                                <circle cx="100" cy="100" r="80" fill="none" stroke="var(--gray-200)" stroke-width="8"/>
+                                <circle cx="100" cy="100" r="80" fill="none" stroke="var(--primary)" stroke-width="8"
+                                        stroke-dasharray="502.4" stroke-dashoffset="502.4" id="progressCircle"
+                                        style="transform:rotate(-90deg);transform-origin:center"/>
+                            </svg>
+                            <div class="progress-text"><span id="progressPercentage">0%</span></div>
+                        </div>
+                    </div>
+                    <div class="progress-details">
+                        <h3>Course Progress</h3>
+                        <div class="progress-list" id="progressList"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ Certificates ═══ -->
+            <section id="certificates" class="dashboard-section">
+                <div class="certificates-grid" id="certificatesGrid"></div>
+            </section>
+
+            <!-- ═══ Settings ═══ -->
+            <section id="settings" class="dashboard-section">
+                <div class="settings-form-card">
+                    <form id="profileForm">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" name="username" id="settingsUsername" class="form-control" placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" name="email" id="settingsEmail" class="form-control" disabled>
+                            <span class="form-hint">Email cannot be changed</span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">New Password</label>
+                                <input type="password" name="newPassword" class="form-control" placeholder="Leave blank to keep current">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Confirm Password</label>
+                                <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm new password">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Update Profile</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<!-- Notification Modal -->
+<div id="notificationModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-bell" style="color:var(--accent);margin-right:0.5rem"></i>Notifications</h3>
+            <button class="close-btn" onclick="closeNotificationCenter()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <div class="notification-list" id="notificationList"></div>
+        </div>
+    </div>
+</div>
+
+<script src="../scripts/main.js"></script>
+<script src="../scripts/dashboard.js"></script>
+<script src="../scripts/nav-auth.js"></script>
+</body>
+</html>

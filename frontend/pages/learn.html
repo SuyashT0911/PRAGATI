@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn – Pragati</title>
+    <meta name="description" content="Interactive chapter viewer with quizzes and progress tracking.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/learn.css">
+</head>
+<body>
+
+<!-- Compact top bar -->
+<nav class="learn-topbar" id="learnTopbar">
+    <a href="index.html" class="nav-logo ltb-logo">
+        <span class="logo-icon">प्र</span>
+        <span class="logo-text">Pragati</span>
+    </a>
+    <div class="ltb-course-info">
+        <span class="ltb-course-name" id="topbarCourseName"></span>
+        <div class="ltb-progress-mini">
+            <div class="ltb-progress-bar"><div class="ltb-progress-fill" id="topbarProgress"></div></div>
+            <span class="ltb-progress-text" id="topbarProgressText">0%</span>
+        </div>
+    </div>
+    <div class="ltb-actions">
+        <button class="ltb-btn" id="toggleSidebar" title="Toggle sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a href="#" class="ltb-btn" id="backToCourse" title="Back to course">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+</nav>
+
+<div class="learn-layout">
+    <!-- Sidebar: Chapter listing -->
+    <aside class="learn-sidebar" id="learnSidebar">
+        <div class="ls-header">
+            <h3><i class="fas fa-book"></i> Chapters</h3>
+            <button class="ls-close" id="closeSidebar"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="ls-chapters" id="sidebarChapters">
+            <!-- Dynamically rendered -->
+        </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="learn-main" id="learnMain">
+        <!-- Loading -->
+        <div class="learn-loading" id="learnLoading">
+            <div class="spinner-lg"></div>
+            <p>Loading chapter...</p>
+        </div>
+
+        <!-- Chapter content -->
+        <article class="chapter-content" id="chapterContent" style="display:none">
+            <div class="chapter-header">
+                <span class="chapter-badge" id="chapterBadge">Chapter 1</span>
+                <h1 id="chapterTitle"></h1>
+                <div class="chapter-meta">
+                    <span><i class="fas fa-clock"></i> <span id="chapterReadTime"></span> min read</span>
+                </div>
+            </div>
+
+            <!-- Markdown rendered content -->
+            <div class="chapter-body" id="chapterBody">
+            </div>
+
+            <!-- Chapter navigation -->
+            <div class="chapter-nav">
+                <button class="btn btn-secondary btn-pill" id="prevChapterBtn" style="display:none">
+                    <i class="fas fa-arrow-left"></i> Previous Chapter
+                </button>
+                <div style="flex:1"></div>
+                <button class="btn btn-primary btn-pill" id="nextChapterBtn" style="display:none">
+                    Next Chapter <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </article>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quizSection" style="display:none">
+            <div class="quiz-header">
+                <div class="quiz-icon"><i class="fas fa-brain"></i></div>
+                <h2>Chapter Quiz</h2>
+                <p>Answer the questions below to unlock the next chapter. You need <strong id="quizPassScore">70</strong>% to pass.</p>
+            </div>
+            <div class="quiz-questions" id="quizQuestions">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="quiz-actions">
+                <button class="btn btn-primary btn-xl btn-pill" id="submitQuizBtn">
+                    <i class="fas fa-check-circle"></i> Submit Answers
+                </button>
+            </div>
+            <!-- Quiz Results -->
+            <div class="quiz-results" id="quizResults" style="display:none">
+                <div class="qr-header" id="qrHeader"></div>
+                <div class="qr-details" id="qrDetails"></div>
+                <div class="qr-actions" id="qrActions"></div>
+            </div>
+        </div>
+
+        <!-- Certificate Section -->
+        <div class="certificate-section" id="certificateSection" style="display:none">
+            <div class="cert-card">
+                <div class="cert-icon">🎓</div>
+                <h2>Congratulations!</h2>
+                <p>You have completed all chapters and quizzes. Your certificate is ready!</p>
+                <button class="btn btn-primary btn-xl btn-pill" id="getCertBtn">
+                    <i class="fas fa-certificate"></i> Get Your Certificate
+                </button>
+                <div class="cert-display" id="certDisplay" style="display:none"></div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- CDN for Markdown rendering -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="../scripts/learn.js"></script>
+<script src="../scripts/nav-auth.js"></script></body>
+</html>

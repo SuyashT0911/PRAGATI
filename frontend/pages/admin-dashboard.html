@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard — Pragati</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR (matching main site) ═══════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-icon">प्र</span>
+            <span class="logo-text">Pragati</span>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item nav-has-dropdown">
+                <a href="browse-paths.html" class="nav-link">Explore <i class="fas fa-chevron-down" style="font-size:0.7rem"></i></a>
+                <div class="nav-dropdown">
+                    <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+                    <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+                    <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-auth">
+            <a href="login.html" class="nav-login-btn">Login</a>
+            <a href="register.html" class="nav-signup-btn">Start Free</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile-overlay" id="mobileOverlay">
+    <div class="nav-mobile-panel" id="mobilePanel">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">प्र</span><span class="logo-text">Pragati</span></a>
+            <button class="nav-mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="nav-mobile-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="nav-mobile-auth">
+            <a href="login.html" class="nmb-login">Login</a>
+            <a href="register.html" class="nmb-signup">Start Free</a>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ DASHBOARD ═══════════════ -->
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="user-profile">
+            <div class="profile-image admin">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <div class="user-info">
+                <h3 id="adminName">Admin</h3>
+                <p id="adminEmail">admin@pragati.com</p>
+                <span class="user-role admin-role">Administrator</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item active"><a href="#overview" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Overview</span></a></li>
+                <li class="nav-item"><a href="#users" class="nav-link"><i class="fas fa-users"></i><span>User Management</span></a></li>
+                <li class="nav-item"><a href="#courses" class="nav-link"><i class="fas fa-book"></i><span>Course Management</span></a></li>
+                <li class="nav-item"><a href="#analytics" class="nav-link"><i class="fas fa-chart-bar"></i><span>Analytics</span></a></li>
+                <li class="nav-item"><a href="#settings" class="nav-link"><i class="fas fa-cog"></i><span>System Settings</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Admin Dashboard</h1>
+                <p>Manage your educational platform</p>
+            </div>
+        </header>
+
+        <div class="dashboard-sections">
+            <!-- ═══ Overview Section ═══ -->
+            <section id="overview" class="dashboard-section active">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#4f46e5,#7c3aed)"><i class="fas fa-users"></i></div>
+                        <div class="stat-content"><h3 id="totalUsers">0</h3><p>Total Users</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#0d9488,#059669)"><i class="fas fa-book-open"></i></div>
+                        <div class="stat-content"><h3 id="totalCourses">0</h3><p>Total Courses</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)"><i class="fas fa-certificate"></i></div>
+                        <div class="stat-content"><h3 id="totalCertificates">0</h3><p>Certificates Issued</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#10b981,#047857)"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-content"><h3 id="activeUsers">0</h3><p>Active Students</p></div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <h3><i class="fas fa-stream" style="color:var(--primary);margin-right:0.5rem"></i>Recent System Activity</h3>
+                    <div class="activity-list" id="adminActivityList"></div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h3><i class="fas fa-bolt" style="color:var(--accent);margin-right:0.5rem"></i>Quick Actions</h3>
+                    <div class="actions-grid">
+                        <button class="action-btn" onclick="addNewUser()"><i class="fas fa-user-plus"></i><span>Add New User</span></button>
+                        <button class="action-btn" onclick="createCourse()"><i class="fas fa-plus-circle"></i><span>Create Course</span></button>
+                        <button class="action-btn" onclick="viewReports()"><i class="fas fa-file-alt"></i><span>View Reports</span></button>
+                        <button class="action-btn" onclick="systemBackup()"><i class="fas fa-database"></i><span>System Backup</span></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ User Management ═══ -->
+            <section id="users" class="dashboard-section">
+                <div class="section-controls">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search users..." id="userSearch">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="btn btn-primary" onclick="addNewUser()"><i class="fas fa-plus"></i> Add User</button>
+                </div>
+
+                <!-- Admin List -->
+                <div style="margin-bottom:2rem">
+                    <div class="table-section-header">
+                        <span class="table-section-icon" style="background:linear-gradient(135deg,#ef4444,#f97316)"><i class="fas fa-user-shield"></i></span>
+                        <div>
+                            <h3>Administrators</h3>
+                            <p id="adminCountLabel">0 admins</p>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Status</th><th>Joined</th><th>Actions</th></tr></thead>
+                            <tbody id="adminsTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Student List -->
+                <div>
+                    <div class="table-section-header">
+                        <span class="table-section-icon" style="background:linear-gradient(135deg,#4f46e5,#0d9488)"><i class="fas fa-user-graduate"></i></span>
+                        <div>
+                            <h3>Students</h3>
+                            <p id="studentCountLabel">0 students</p>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Courses</th><th>Status</th><th>Joined</th><th>Actions</th></tr></thead>
+                            <tbody id="studentsTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ Course Management ═══ -->
+            <section id="courses" class="dashboard-section">
+                <div class="section-controls">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search courses..." id="courseSearch">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="btn btn-primary" onclick="createCourse()"><i class="fas fa-plus"></i> Create Course</button>
+                </div>
+                <div class="courses-grid" id="adminCoursesGrid"></div>
+            </section>
+
+            <!-- ═══ Analytics ═══ -->
+            <section id="analytics" class="dashboard-section">
+                <div class="analytics-grid">
+                    <div class="chart-card"><h3>User Growth</h3><div class="chart-container" id="userGrowthChart"></div></div>
+                    <div class="chart-card"><h3>Top Courses</h3><div class="chart-container" id="coursePopularityChart"></div></div>
+                    <div class="chart-card"><h3>Completion Rate</h3><div class="chart-container" id="completionRatesChart"></div></div>
+                    <div class="chart-card"><h3>Platform Summary</h3><div class="chart-container" id="revenueChart"></div></div>
+                </div>
+            </section>
+
+            <!-- ═══ System Settings ═══ -->
+            <section id="settings" class="dashboard-section">
+                <div class="settings-tabs">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" data-tab="general">General</button>
+                        <button class="tab-btn" data-tab="security">Security</button>
+                        <button class="tab-btn" data-tab="email">Email</button>
+                        <button class="tab-btn" data-tab="backup">Backup</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="general" class="tab-pane active">
+                            <form id="generalSettingsForm" class="settings-form-card">
+                                <div class="form-group"><label class="form-label">Platform Name</label><input type="text" name="platformName" value="Pragati" class="form-control"></div>
+                                <div class="form-group"><label class="form-label">Contact Email</label><input type="email" name="contactEmail" value="contact@pragati.com" class="form-control"></div>
+                                <div class="form-group"><label class="form-label">Timezone</label>
+                                    <select name="timezone" class="form-control form-select">
+                                        <option value="IST" selected>India Standard Time (IST)</option>
+                                        <option value="UTC">UTC</option>
+                                        <option value="EST">Eastern Time</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Settings</button>
+                            </form>
+                        </div>
+                        <div id="security" class="tab-pane">
+                            <form id="securitySettingsForm" class="settings-form-card">
+                                <div class="form-group"><label class="form-label">Session Timeout (minutes)</label><input type="number" name="sessionTimeout" value="30" class="form-control"></div>
+                                <div class="form-group"><label class="form-label">Password Policy</label>
+                                    <select name="passwordPolicy" class="form-control form-select">
+                                        <option value="strong">Strong (8+ chars, symbols)</option>
+                                        <option value="medium">Medium (6+ chars)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group"><label class="form-label" style="display:flex;align-items:center;gap:0.5rem"><input type="checkbox" name="twoFactorAuth" style="width:auto"> Enable Two-Factor Authentication</label></div>
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-shield-alt"></i> Save Security Settings</button>
+                            </form>
+                        </div>
+                        <div id="email" class="tab-pane">
+                            <form id="emailSettingsForm" class="settings-form-card">
+                                <div class="form-row">
+                                    <div class="form-group"><label class="form-label">SMTP Host</label><input type="text" name="smtpHost" class="form-control" placeholder="smtp.gmail.com"></div>
+                                    <div class="form-group"><label class="form-label">SMTP Port</label><input type="number" name="smtpPort" value="587" class="form-control"></div>
+                                </div>
+                                <div class="form-group"><label class="form-label">Email Username</label><input type="text" name="emailUsername" class="form-control" placeholder="noreply@pragati.com"></div>
+                                <div class="form-group"><label class="form-label">Email Password</label><input type="password" name="emailPassword" class="form-control"></div>
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-envelope"></i> Save Email Settings</button>
+                            </form>
+                        </div>
+                        <div id="backup" class="tab-pane">
+                            <div class="settings-form-card">
+                                <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem">
+                                    <button class="btn btn-primary" onclick="createBackup()"><i class="fas fa-download"></i> Create Backup</button>
+                                    <button class="btn btn-secondary" onclick="restoreBackup()"><i class="fas fa-upload"></i> Restore Backup</button>
+                                </div>
+                                <h4 style="margin-bottom:1rem;color:var(--text-med)">Backup History</h4>
+                                <div id="backupList"><p style="color:var(--text-muted);font-size:0.9rem">No backups yet. Create your first backup above.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<!-- ═══ Add User Modal ═══ -->
+<div id="addUserModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-user-plus" style="color:var(--primary);margin-right:0.5rem"></i>Add New User</h3>
+            <button class="close-btn" onclick="closeModal('addUserModal')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <form id="addUserForm">
+                <div class="form-group">
+                    <label class="form-label">Full Name <span class="required">*</span></label>
+                    <input type="text" name="username" class="form-control" placeholder="Enter full name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address <span class="required">*</span></label>
+                    <input type="email" name="email" class="form-control" placeholder="user@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password <span class="required">*</span></label>
+                    <input type="password" name="password" class="form-control" placeholder="Min 6 characters" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Role</label>
+                    <select name="role" class="form-control form-select">
+                        <option value="student">Student</option>
+                        <option value="admin">Administrator</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" style="margin-top:0.5rem"><i class="fas fa-user-plus"></i> Create User</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ Notification Modal ═══ -->
+<div id="notificationModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-bell" style="color:var(--accent);margin-right:0.5rem"></i>Notifications</h3>
+            <button class="close-btn" onclick="closeNotificationCenter()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <div class="notification-list" id="adminNotificationList"></div>
+        </div>
+    </div>
+</div>
+
+<script src="../scripts/main.js"></script>
+<script src="../scripts/dashboard.js"></script>
+<script src="../scripts/admin.js"></script>
+<script src="../scripts/nav-auth.js"></script>
+</body>
+</html>

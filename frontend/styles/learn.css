@@ -1,0 +1,516 @@
+/* ================================================================
+   PRAGATI — Learn Page Styles
+   Full-screen learning experience with sidebar + content + quiz
+   ================================================================ */
+
+/* ── Topbar ───────────────────────────────────────────────────── */
+.learn-topbar {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 56px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+    z-index: var(--z-sticky);
+    box-shadow: var(--shadow-xs);
+}
+.ltb-logo .logo-icon { width: 30px; height: 30px; font-size: 0.8rem; border-radius: 8px; }
+.ltb-logo .logo-text { font-size: 1.1rem; }
+.ltb-course-info { flex: 1; min-width: 0; display: flex; align-items: center; gap: 1rem; }
+.ltb-course-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--gray-800);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}
+.ltb-progress-mini { display: flex; align-items: center; gap: 0.5rem; }
+.ltb-progress-bar {
+    width: 120px; height: 6px;
+    background: var(--gray-100);
+    border-radius: var(--r-pill);
+    overflow: hidden;
+}
+.ltb-progress-fill {
+    height: 100%;
+    background: var(--grad-primary);
+    border-radius: var(--r-pill);
+    transition: width 0.5s ease;
+    width: 0%;
+}
+.ltb-progress-text { font-size: 0.75rem; font-weight: 700; color: var(--primary); min-width: 28px; }
+.ltb-actions { display: flex; gap: 0.5rem; }
+.ltb-btn {
+    width: 36px; height: 36px;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: var(--r-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-med);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--t-fast);
+    text-decoration: none;
+}
+.ltb-btn:hover { background: var(--p50); color: var(--primary); border-color: var(--p200); }
+
+/* ── Layout ───────────────────────────────────────────────────── */
+.learn-layout {
+    display: flex;
+    margin-top: 56px;
+    min-height: calc(100vh - 56px);
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────── */
+.learn-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    background: white;
+    border-right: 1px solid var(--border);
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+    position: sticky;
+    top: 56px;
+    transition: transform var(--t-base), width var(--t-base);
+}
+.learn-sidebar.collapsed {
+    transform: translateX(-100%);
+    width: 0;
+    border: none;
+    overflow: hidden;
+}
+.ls-header {
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ls-header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.ls-header h3 i { color: var(--primary); }
+.ls-close {
+    width: 30px; height: 30px;
+    border: none;
+    background: var(--gray-100);
+    border-radius: var(--r-sm);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    cursor: pointer;
+}
+.ls-chapters { padding: 0.5rem; }
+
+/* Chapter sidebar items */
+.ls-chapter {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: var(--r-md);
+    cursor: pointer;
+    transition: all var(--t-fast);
+    margin-bottom: 2px;
+}
+.ls-chapter:hover { background: var(--gray-50); }
+.ls-chapter.active { background: var(--p50); border: 1px solid var(--p200); }
+.ls-chapter.completed .ls-num { background: var(--success); color: white; border-color: var(--success); }
+.ls-chapter.locked { opacity: 0.5; cursor: not-allowed; }
+
+.ls-num {
+    width: 32px; height: 32px;
+    border: 2px solid var(--gray-300);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--gray-500);
+    flex-shrink: 0;
+    transition: all var(--t-fast);
+}
+.ls-chapter.active .ls-num {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+.ls-ch-info { flex: 1; min-width: 0; }
+.ls-ch-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.ls-ch-meta {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
+/* ── Main Content ─────────────────────────────────────────────── */
+.learn-main {
+    flex: 1;
+    min-width: 0;
+    background: var(--gray-50);
+    padding: 2.5rem;
+    overflow-y: auto;
+}
+.learn-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    gap: 1rem;
+    color: var(--text-light);
+}
+
+/* ── Chapter Content ──────────────────────────────────────────── */
+.chapter-content {
+    max-width: 780px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--r-xl);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    padding: 2.5rem;
+}
+.chapter-header { margin-bottom: 2rem; }
+.chapter-badge {
+    display: inline-flex;
+    padding: 0.3rem 0.8rem;
+    background: var(--p50);
+    color: var(--primary);
+    border: 1px solid var(--p200);
+    border-radius: var(--r-pill);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+}
+.chapter-header h1 {
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    color: var(--gray-900);
+    margin-bottom: 0.75rem;
+}
+.chapter-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+.chapter-meta i { color: var(--primary); margin-right: 0.3rem; }
+
+/* ── Markdown Body Styling ────────────────────────────────────── */
+.chapter-body {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--gray-700);
+}
+.chapter-body h1 { font-size: 1.6rem; margin: 2rem 0 1rem; color: var(--gray-900); border-bottom: 2px solid var(--p100); padding-bottom: 0.5rem; }
+.chapter-body h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; color: var(--gray-900); }
+.chapter-body h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; color: var(--gray-800); }
+.chapter-body h4 { font-size: 1rem; margin: 1.25rem 0 0.5rem; color: var(--gray-800); }
+.chapter-body p { margin-bottom: 1rem; }
+.chapter-body strong { color: var(--gray-900); font-weight: 700; }
+.chapter-body ul, .chapter-body ol { margin: 0.75rem 0 1rem 1.5rem; }
+.chapter-body li { margin-bottom: 0.4rem; color: var(--gray-700); }
+.chapter-body code {
+    background: var(--p50);
+    color: var(--p700);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.88em;
+    font-family: 'Fira Code', 'Consolas', monospace;
+}
+.chapter-body pre {
+    background: var(--gray-900);
+    color: #e2e8f0;
+    border-radius: var(--r-lg);
+    padding: 1.25rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.chapter-body pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+}
+.chapter-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.88rem;
+    border-radius: var(--r-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+.chapter-body th {
+    background: var(--p50);
+    color: var(--gray-800);
+    font-weight: 700;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid var(--p200);
+}
+.chapter-body td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-700);
+}
+.chapter-body tr:last-child td { border-bottom: none; }
+.chapter-body blockquote {
+    border-left: 4px solid var(--primary);
+    background: var(--p50);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    font-style: italic;
+    color: var(--gray-600);
+}
+.chapter-body hr {
+    border: none;
+    height: 1px;
+    background: var(--gray-200);
+    margin: 2rem 0;
+}
+
+/* ── Chapter Navigation ───────────────────────────────────────── */
+.chapter-nav {
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+/* ── Quiz Section ─────────────────────────────────────────────── */
+.quiz-section {
+    max-width: 780px;
+    margin: 2rem auto 0;
+    background: white;
+    border-radius: var(--r-xl);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    padding: 2.5rem;
+}
+.quiz-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.quiz-icon {
+    width: 64px; height: 64px;
+    background: var(--grad-primary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+    box-shadow: var(--shadow-md);
+}
+.quiz-header h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.quiz-header p { color: var(--text-light); font-size: 0.9rem; }
+
+.quiz-questions { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* Question card */
+.quiz-q-card {
+    padding: 1.25rem;
+    background: var(--gray-50);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+}
+.quiz-q-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+.quiz-q-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+.quiz-options { display: flex; flex-direction: column; gap: 0.5rem; }
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: var(--r-md);
+    cursor: pointer;
+    transition: all var(--t-fast);
+    font-size: 0.9rem;
+    color: var(--text-med);
+}
+.quiz-option:hover { border-color: var(--p400); background: var(--p50); }
+.quiz-option.selected {
+    border-color: var(--primary);
+    background: var(--p50);
+    color: var(--primary);
+    font-weight: 600;
+}
+.quiz-option.correct {
+    border-color: var(--success);
+    background: #ecfdf5;
+    color: #047857;
+}
+.quiz-option.incorrect {
+    border-color: var(--danger);
+    background: #fef2f2;
+    color: #b91c1c;
+}
+.quiz-option-circle {
+    width: 22px; height: 22px;
+    border: 2px solid var(--gray-300);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: all var(--t-fast);
+}
+.quiz-option.selected .quiz-option-circle {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+.quiz-option.correct .quiz-option-circle {
+    background: var(--success);
+    border-color: var(--success);
+    color: white;
+}
+.quiz-option.incorrect .quiz-option-circle {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: white;
+}
+
+.quiz-actions { text-align: center; margin-top: 2rem; }
+
+/* Quiz Results */
+.quiz-results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: var(--r-xl);
+    text-align: center;
+}
+.qr-header {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+.qr-header.passed { color: var(--success); }
+.qr-header.failed { color: var(--danger); }
+.qr-details {
+    font-size: 0.9rem;
+    color: var(--text-med);
+    margin-bottom: 1rem;
+}
+.qr-actions { display: flex; gap: 0.75rem; justify-content: center; }
+
+.quiz-explanation {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background: #f0fdf4;
+    border: 1px solid #a7f3d0;
+    border-radius: var(--r-sm);
+    font-size: 0.8rem;
+    color: #065f46;
+    line-height: 1.5;
+}
+
+/* ── Certificate ──────────────────────────────────────────────── */
+.certificate-section {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+.cert-card {
+    text-align: center;
+    background: white;
+    border-radius: var(--r-xl);
+    border: 1px solid var(--border);
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow-lg);
+}
+.cert-icon { font-size: 4rem; margin-bottom: 1rem; }
+.cert-card h2 { margin-bottom: 0.5rem; }
+.cert-card p { color: var(--text-light); margin-bottom: 1.5rem; }
+.cert-display {
+    margin-top: 1.5rem;
+    padding: 2rem;
+    border: 3px solid var(--primary);
+    border-radius: var(--r-xl);
+    background: var(--grad-hero);
+}
+.cert-display h3 { color: var(--primary); margin-bottom: 0.5rem; }
+.cert-display .cert-id {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .learn-sidebar {
+        position: fixed;
+        left: 0; top: 56px; bottom: 0;
+        z-index: 90;
+        transform: translateX(-100%);
+        width: 280px;
+        box-shadow: var(--shadow-xl);
+    }
+    .learn-sidebar.open {
+        transform: translateX(0);
+    }
+    .learn-sidebar.collapsed { transform: translateX(-100%); }
+    .ls-close { display: flex; }
+    .learn-main { padding: 1.5rem; }
+    .chapter-content { padding: 1.5rem; }
+    .quiz-section { padding: 1.5rem; }
+    .ltb-course-name { max-width: 150px; }
+}
+@media (max-width: 640px) {
+    .learn-topbar { padding: 0 0.75rem; gap: 0.75rem; }
+    .ltb-progress-bar { width: 60px; }
+    .learn-main { padding: 1rem; }
+    .chapter-content { padding: 1.25rem; border-radius: var(--r-lg); }
+    .quiz-section { padding: 1.25rem; }
+    .chapter-header h1 { font-size: 1.25rem; }
+}

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragati – Your Complete Education Journey, Guided</title>
+    <meta name="description" content="Pragati helps every Indian student — from Class 10 to PhD — find their perfect education and career path with step-by-step guidance, certified courses, and expert mentorship.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css?v=11">
+    <link rel="stylesheet" href="../styles/landing.css?v=11">
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-icon">प्र</span>
+            <span class="logo-text">Pragati</span>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+            <li class="nav-item nav-has-dropdown">
+                <a href="browse-paths.html" class="nav-link">Explore <i class="fas fa-chevron-down" style="font-size:0.7rem"></i></a>
+                <div class="nav-dropdown">
+                    <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+                    <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+                    <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+                    <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+                    <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-auth">
+            <a href="login.html" class="nav-login-btn">Login</a>
+            <a href="register.html" class="nav-signup-btn">Start Free</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile-overlay" id="mobileOverlay">
+    <div class="nav-mobile-panel" id="mobilePanel">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">प्र</span><span class="logo-text">Pragati</span></a>
+            <button class="nav-mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="nav-mobile-links">
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+            <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+            <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+            <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+            <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="nav-mobile-auth">
+            <a href="login.html" class="nmb-login">Login</a>
+            <a href="register.html" class="nmb-signup">Start Free</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="page-wrapper">
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+    <!-- Background shapes -->
+    <div class="hero-bg">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+        <div class="hero-blob hero-blob-3"></div>
+        <div class="hero-grid"></div>
+    </div>
+
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-text-col">
+                <div class="hero-announce">
+                    <span class="announce-dot"></span>
+                    New Paths Added — Explore 200+ education routes!
+                    <i class="fas fa-arrow-right" style="font-size:0.75rem"></i>
+                </div>
+
+                <h1 class="hero-title">
+                    Every Education<br>
+                    Journey — <span class="gradient-text">Guided<br>& Certified</span>
+                </h1>
+
+                <p class="hero-desc">
+                    Whether you're in Class 10th, finishing graduation, or pursuing a PhD —
+                    <strong>Pragati</strong> maps your next step, connects you to the right courses,
+                    and certifies your progress. One platform, all stages of learning.
+                </p>
+
+                <div class="hero-edu-pills">
+                    <span class="edu-pill">Class 10th</span>
+                    <span class="edu-pill-arrow"><i class="fas fa-arrow-right"></i></span>
+                    <span class="edu-pill active">Your Stage</span>
+                    <span class="edu-pill-arrow"><i class="fas fa-arrow-right"></i></span>
+                    <span class="edu-pill">Post-Grad & PhD</span>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="path-explorer.html" class="btn btn-primary btn-xl btn-pill">
+                        <i class="fas fa-compass"></i> Explore Your Path
+                    </a>
+                    <a href="register.html" class="btn btn-secondary btn-xl btn-pill">
+                        <i class="fas fa-user-plus"></i> Free Sign Up
+                    </a>
+                </div>
+
+                <div class="hero-trust">
+                    <div class="trust-avatars">
+                        <div class="ta ta-1">A</div>
+                        <div class="ta ta-2">R</div>
+                        <div class="ta ta-3">P</div>
+                        <div class="ta ta-4">K</div>
+                        <div class="ta ta-5">M</div>
+                    </div>
+                    <span>Join <strong>50,000+</strong> students already guided</span>
+                </div>
+            </div>
+
+            <div class="hero-visual-col">
+                <div class="hero-card-main">
+                    <div class="hcard-header">
+                        <div class="hcard-avatar">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div>
+                            <div class="hcard-name">Your Journey</div>
+                            <div class="hcard-sub">All education levels supported</div>
+                        </div>
+                        <span class="badge badge-success"><i class="fas fa-circle" style="font-size:6px"></i> Live</span>
+                    </div>
+                    <div class="hcard-path-list">
+                        <div class="hpath-item hpath-done">
+                            <div class="hpath-dot done"><i class="fas fa-check"></i></div>
+                            <div class="hpath-label">Class 10th Completed</div>
+                        </div>
+                        <div class="hpath-item hpath-active">
+                            <div class="hpath-dot active"><i class="fas fa-play"></i></div>
+                            <div class="hpath-label">Senior Secondary (Your stage)</div>
+                            <div class="hpath-badge">Now</div>
+                        </div>
+                        <div class="hpath-item">
+                            <div class="hpath-dot upcoming"><i class="fas fa-lock"></i></div>
+                            <div class="hpath-label">Undergraduate Degree</div>
+                        </div>
+                        <div class="hpath-item">
+                            <div class="hpath-dot upcoming"><i class="fas fa-lock"></i></div>
+                            <div class="hpath-label">Post-Graduate / PhD</div>
+                        </div>
+                    </div>
+                    <a href="path-explorer.html" class="hcard-cta btn btn-primary btn-full btn-sm">
+                        <i class="fas fa-route"></i> View My Paths
+                    </a>
+                </div>
+
+                <!-- Floating mini cards -->
+                <div class="float-card fc-1">
+                    <div class="fc-icon"><i class="fas fa-medal"></i></div>
+                    <div class="fc-text">
+                        <strong>Certificate Earned!</strong>
+                        <span>Data Science Basics</span>
+                    </div>
+                </div>
+                <div class="float-card fc-2">
+                    <div class="fc-icon green"><i class="fas fa-book-open"></i></div>
+                    <div class="fc-text">
+                        <strong>200+ Paths</strong>
+                        <span>10th to PhD</span>
+                    </div>
+                </div>
+                <div class="float-card fc-3">
+                    <div class="fc-icon amber"><i class="fas fa-star"></i></div>
+                    <div class="fc-text">
+                        <strong>98% Satisfaction</strong>
+                        <span>Across all streams</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<!-- ═══════════════ WHO IS IT FOR ═══════════════ -->
+<section class="edu-levels section-sm">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag"><i class="fas fa-users"></i> Who Is Pragati For?</span>
+            <h2>Every Step of Your<br><span class="gradient-text">Education Life</span></h2>
+            <p>From your very first career crossroad to the highest levels of academia — Pragati has you covered at every stage.</p>
+        </div>
+        <div class="edu-levels-scroll">
+            <div class="edu-level-track" id="eduLevelTrack">
+                <div class="edu-level-card reveal" style="--delay:0.05s">
+                    <div class="el-icon" style="background:linear-gradient(135deg,#818cf8,#6366f1)"><i class="fas fa-school"></i></div>
+                    <h4>After Class 10th</h4>
+                    <p>Choose the right stream for 11th & 12th — Science, Commerce, Arts or Vocational</p>
+                    <a href="register.html" class="el-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="edu-level-card reveal" style="--delay:0.1s">
+                    <div class="el-icon" style="background:linear-gradient(135deg,#34d399,#0d9488)"><i class="fas fa-flask"></i></div>
+                    <h4>After 12th Science</h4>
+                    <p>PCM, PCB or PCMB — discover every possible undergraduate path and entrance exam</p>
+                    <a href="register.html" class="el-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="edu-level-card reveal" style="--delay:0.15s">
+                    <div class="el-icon" style="background:linear-gradient(135deg,#fbbf24,#f59e0b)"><i class="fas fa-chart-pie"></i></div>
+                    <h4>After 12th Commerce</h4>
+                    <p>CA, B.Com, MBA path, BBA, Economics — the full financial and business world awaits</p>
+                    <a href="register.html" class="el-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="edu-level-card reveal" style="--delay:0.2s">
+                    <div class="el-icon" style="background:linear-gradient(135deg,#f472b6,#ec4899)"><i class="fas fa-palette"></i></div>
+                    <h4>After 12th Arts</h4>
+                    <p>Law, design, journalism, psychology, civil services — arts has more paths than you think</p>
+                    <a href="register.html" class="el-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="edu-level-card reveal" style="--delay:0.25s">
+                    <div class="el-icon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6)"><i class="fas fa-wrench"></i></div>
+                    <h4>After Diploma</h4>
+                    <p>Lateral entry B.Tech, AMIE, specialized certifications — your diploma is a launchpad</p>
+                    <a href="register.html" class="el-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="edu-level-card reveal" style="--delay:0.3s">
+                    <div class="el-icon" style="background:linear-gradient(135deg,#c084fc,#a855f7)"><i class="fas fa-graduation-cap"></i></div>
+                    <h4>After Graduation</h4>
+                    <p>MBA, M.Tech, M.Sc, Civil services, abroad MS, research — level up your degree</p>
+                    <a href="register.html" class="el-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="edu-level-card reveal" style="--delay:0.35s">
+                    <div class="el-icon" style="background:linear-gradient(135deg,#fb923c,#ef4444)"><i class="fas fa-microscope"></i></div>
+                    <h4>Post-Grad & Research</h4>
+                    <p>PhD programs, fellowships, post-doctoral research, academic careers and more</p>
+                    <a href="register.html" class="el-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+<section class="how-it-works section" id="how">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag"><i class="fas fa-magic"></i> How It Works</span>
+            <h2>From Confusion to <span class="gradient-text">Clarity</span> in Minutes</h2>
+            <p>Pragati turns your past education into a clear roadmap for your future. Here's how simple it is.</p>
+        </div>
+        <div class="steps-container">
+            <div class="step-item reveal" style="--delay:0.05s">
+                <div class="step-visual">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fas fa-graduation-cap"></i></div>
+                </div>
+                <div class="step-content">
+                    <h3>Tell Us Where You Are</h3>
+                    <p>Select your current or recently completed education level — whether it's 10th, 12th (any stream), a diploma, graduation, or post-graduation.</p>
+                </div>
+                <div class="step-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+            </div>
+            <div class="step-item reveal" style="--delay:0.15s">
+                <div class="step-visual">
+                    <div class="step-number">02</div>
+                    <div class="step-icon bg-teal"><i class="fas fa-map-signs"></i></div>
+                </div>
+                <div class="step-content">
+                    <h3>Discover All Paths</h3>
+                    <p>Browse every possible next step — courses, colleges, entrance exams, career prospects, and salary expectations — all in one place.</p>
+                </div>
+                <div class="step-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+            </div>
+            <div class="step-item reveal" style="--delay:0.25s">
+                <div class="step-visual">
+                    <div class="step-number">03</div>
+                    <div class="step-icon bg-amber"><i class="fas fa-book-open"></i></div>
+                </div>
+                <div class="step-content">
+                    <h3>Learn & Get Certified</h3>
+                    <p>Enroll in curated courses for your chosen path. Complete chapters, pass quizzes, and earn verifiable certificates to showcase your skills.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login gate notice -->
+        <div class="login-gate-notice reveal" style="display:flex;flex-direction:row;align-items:center;">
+            <div class="lgn-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="lgn-text">
+                <strong>Explore paths freely.</strong> Login required only to access the full career path guider, enroll in courses, and track your progress.
+            </div>
+            <a href="register.html" class="btn btn-primary btn-sm btn-pill" style="flex-shrink:0;margin-left:auto;white-space:nowrap;">Create Free Account</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ FEATURES ═══════════════ -->
+<section class="features section" id="features" style="background:var(--bg-alt)">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag"><i class="fas fa-star"></i> Platform Features</span>
+            <h2>Everything You Need to<br><span class="gradient-text">Navigate Your Future</span></h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card feat-large reveal" style="--delay:0.05s">
+                <div class="feat-icon"><i class="fas fa-sitemap"></i></div>
+                <h3>Complete Path Mapping</h3>
+                <p>Visual roadmap of every education route available based on your background. From stream selection to PhD — no path is left out.</p>
+                <div class="feat-visual-tree">
+                    <div class="ftree-root">Your Education</div>
+                    <div class="ftree-branches">
+                        <div class="ftree-branch b1">UG Programs</div>
+                        <div class="ftree-branch b2">Professional</div>
+                        <div class="ftree-branch b3">PG & Research</div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-card reveal" style="--delay:0.1s">
+                <div class="feat-icon"><i class="fas fa-certificate"></i></div>
+                <h3>Certified Courses</h3>
+                <p>Learn with structured courses featuring chapters, quizzes, and industry-recognized certificates.</p>
+            </div>
+            <div class="feature-card reveal" style="--delay:0.15s">
+                <div class="feat-icon teal"><i class="fas fa-chart-line"></i></div>
+                <h3>Progress Tracking</h3>
+                <p>Your personal dashboard tracks every chapter, quiz score, course completion, and earned certificate.</p>
+            </div>
+            <div class="feature-card feat-wide reveal" style="--delay:0.2s">
+                <div class="feat-icon amber"><i class="fas fa-layer-group"></i></div>
+                <h3>All Streams & Levels</h3>
+                <p>Complete coverage from Class 10th through PhD across all Indian education streams.</p>
+                <div class="feat-stream-tags">
+                    <span>PCM</span><span>PCB</span><span>PCMB</span><span>Commerce</span>
+                    <span>Arts</span><span>Vocational</span><span>Diploma</span>
+                    <span>UG</span><span>PG</span><span>Research</span>
+                </div>
+            </div>
+            <div class="feature-card reveal" style="--delay:0.25s">
+                <div class="feat-icon purple"><i class="fas fa-university"></i></div>
+                <h3>Top College Insights</h3>
+                <p>Admission criteria, cut-offs, fees, and placement data for India's best institutions.</p>
+            </div>
+            <div class="feature-card reveal" style="--delay:0.3s">
+                <div class="feat-icon rose"><i class="fas fa-rupee-sign"></i></div>
+                <h3>Salary Projections</h3>
+                <p>Know earning potential before you choose — starting salaries, growth, and industry ranges.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ QUICK EXPLORE PREVIEW ═══════════════ -->
+<section class="quick-explore section">
+    <div class="container">
+        <!-- Quick Explore header -->
+        <div class="qex-header reveal">
+            <span class="section-tag"><i class="fas fa-compass"></i> Quick Look</span>
+            <div class="qex-heading-row">
+                <h2>Popular <span class="gradient-text">Education Paths</span></h2>
+                <a href="path-explorer.html" class="btn btn-secondary btn-sm qex-view-btn">View All Paths <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="qex-tabs reveal">
+            <button class="qex-tab active" data-tab="science"><i class="fas fa-flask"></i> Science</button>
+            <button class="qex-tab" data-tab="commerce"><i class="fas fa-chart-bar"></i> Commerce</button>
+            <button class="qex-tab" data-tab="arts"><i class="fas fa-palette"></i> Arts</button>
+            <button class="qex-tab" data-tab="diploma"><i class="fas fa-tools"></i> Diploma</button>
+            <button class="qex-tab" data-tab="graduation"><i class="fas fa-graduation-cap"></i> After Graduation</button>
+        </div>
+
+        <div class="qex-grid" id="qexGrid"></div>
+
+        <div class="qex-footer reveal" style="display:flex;flex-direction:column;align-items:flex-start;">
+            <p style="margin-bottom:1.2rem;">Showing a preview. <strong>200+ total paths</strong> available across all education levels.</p>
+            <a href="path-explorer.html" class="btn btn-primary btn-pill">
+                <i class="fas fa-compass"></i> Full Path Explorer
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ STATS BAND ═══════════════ -->
+<section class="stats-band">
+    <div class="container">
+        <div class="stats-inner reveal" style="display:flex;flex-direction:row;align-items:center;flex-wrap:nowrap;justify-content:center;">
+            <div class="stat-item">
+                <div class="stat-num-row"><div class="stat-num" data-to="50000">0</div><div class="stat-suf">+</div></div>
+                <div class="stat-lab">Students Guided</div>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-item">
+                <div class="stat-num-row"><div class="stat-num" data-to="200">0</div><div class="stat-suf">+</div></div>
+                <div class="stat-lab">Education Paths</div>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-item">
+                <div class="stat-num-row"><div class="stat-num" data-to="7">0</div><div class="stat-suf"></div></div>
+                <div class="stat-lab">Education Levels</div>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-item">
+                <div class="stat-num-row"><div class="stat-num" data-to="98">0</div><div class="stat-suf">%</div></div>
+                <div class="stat-lab">Satisfaction Rate</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+<section class="testimonials section" style="background:var(--bg-soft)">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag"><i class="fas fa-heart"></i> Student Stories</span>
+            <h2>Real Students, <span class="gradient-text">Real Results</span></h2>
+            <p>Hear from people who used Pragati to find their path — from 10th to post-graduation.</p>
+        </div>
+        <div class="testimonials-wrap reveal">
+            <div class="testi-grid" id="testiGrid">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="testi-dots" id="testiDots"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ CTA SECTION ═══════════════ -->
+<section class="cta-section section">
+    <div class="container">
+        <div class="cta-box reveal">
+            <div class="cta-bg-pattern"></div>
+            <div class="cta-content">
+                <span class="cta-emoji">🚀</span>
+                <h2>Start Your Journey Today</h2>
+                <p>Explore paths for free. Create a free account to save paths, enroll in courses, track your progress, and earn certificates.</p>
+                <div class="cta-actions">
+                    <a href="path-explorer.html" class="btn btn-primary btn-xl btn-pill">
+                        <i class="fas fa-compass"></i> Explore Paths Free
+                    </a>
+                    <a href="register.html" class="btn btn-xl btn-pill" style="background:white; color:var(--primary); border:2px solid var(--p200)">
+                        <i class="fas fa-user-plus"></i> Create Free Account
+                    </a>
+                </div>
+                <p class="cta-note"><i class="fas fa-lock" style="color:var(--success)"></i> No credit card needed · Free forever for path exploration</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div><!-- end page-wrapper -->
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+                    <span class="logo-icon">प्र</span><span class="logo-text" style="color:white">Pragati</span>
+                </a>
+                <p>Empowering every Indian student to make informed decisions about education and career — from Class 10 to PhD.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="browse-paths.html">Browse All Paths</a>
+                <a href="path-explorer.html">Interactive Explorer</a>
+                <a href="explore.html#by-level">By Education Level</a>
+                <a href="explore.html#streams">By Stream</a>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign Up Free</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">College Rankings</a>
+                <a href="#">Scholarship Guide</a>
+                <a href="#">Entrance Exam Dates</a>
+                <a href="#">Career Aptitude Test</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Pragati. All rights reserved. Made with ❤️ for Indian students.</span>
+            <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="../scripts/landing.js"></script>
+<script src="../scripts/nav-auth.js"></script></body>
+</html>

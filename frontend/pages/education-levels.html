@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Education Level – Pragati</title>
+    <meta name="description" content="Explore education paths tailored to your current education level: After 10th, 12th, Diploma, or Graduation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/pages.css?v=2026" >
+    <link rel="stylesheet" href="../styles/education-levels.css">
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-icon">प्र</span>
+            <span class="logo-text">Pragati</span>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item nav-has-dropdown">
+                <a href="browse-paths.html" class="nav-link active">Explore <i class="fas fa-chevron-down" style="font-size:0.7rem"></i></a>
+                <div class="nav-dropdown">
+                    <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+                    <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+                    <a href="education-levels.html"><i class="fas fa-layer-group"></i> By Education Level</a>
+                    <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+                    <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-auth">
+            <a href="login.html" class="nav-login-btn">Login</a>
+            <a href="register.html" class="nav-signup-btn">Start Free</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile-overlay" id="mobileOverlay">
+    <div class="nav-mobile-panel" id="mobilePanel">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">प्र</span><span class="logo-text">Pragati</span></a>
+            <button class="nav-mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="nav-mobile-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="explore.html"><i class="fas fa-compass"></i> Explore Hub</a>
+            <a href="path-explorer.html"><i class="fas fa-route"></i> Interactive Explorer</a>
+            <a href="education-levels.html" class="active"><i class="fas fa-layer-group"></i> By Education Level</a>
+            <a href="streams.html"><i class="fas fa-sitemap"></i> By Stream</a>
+            <a href="courses.html"><i class="fas fa-book-open"></i> All Courses</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="nav-mobile-auth">
+            <a href="login.html" class="nmb-login">Login</a>
+            <a href="register.html" class="nmb-signup">Start Free</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Hero -->
+<section class="page-hero">
+    <div class="page-hero-blob page-hero-blob-1"></div>
+    <div class="page-hero-blob page-hero-blob-2"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <div class="page-hero-eyebrow"><i class="fas fa-layer-group"></i> Education Stages</div>
+            <h1 class="page-hero-title">Your Journey <span class="gradient-text">Starts Here</span></h1>
+            <p class="page-hero-sub">Whether you've just finished 10th grade or completed your graduation, discover the specific paths designed for your current educational milestone.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Education Levels Grid -->
+<section class="section" style="background:var(--gray-50,#f8fafc)">
+    <div class="container edu-journey-wrapper">
+        <div class="edu-levels-grid">
+            
+            <div class="level-detail-card reveal" style="--delay:0s">
+                <div class="ldc-icon-wrap" style="background:linear-gradient(135deg,#34d399,#0d9488)"><i class="fas fa-school"></i></div>
+                <h3>After Class 10th</h3>
+                <p>The first major crossroads. Choosing the right foundational stream will dictate your future degrees and career trajectories.</p>
+                <div class="ldc-features">
+                    <span class="ldc-feat"><i class="fas fa-flask"></i> Science (PCM, PCB, PCMB)</span>
+                    <span class="ldc-feat"><i class="fas fa-chart-line"></i> Commerce (With/Without Maths)</span>
+                    <span class="ldc-feat"><i class="fas fa-palette"></i> Arts & Humanities</span>
+                    <span class="ldc-feat"><i class="fas fa-tools"></i> 3-Year Polytechnic Diplomas</span>
+                </div>
+                <a href="explore.html" class="btn btn-secondary btn-full" style="justify-content:center;margin-top:auto">View Paths After 10th <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="level-detail-card reveal" style="--delay:0.1s">
+                <div class="ldc-icon-wrap" style="background:linear-gradient(135deg,#818cf8,#6366f1)"><i class="fas fa-microscope"></i></div>
+                <h3>After 12th Science</h3>
+                <p>The gateway to engineering, medical, and pure sciences. Highly competitive but offering the most diverse technological careers.</p>
+                <div class="ldc-features">
+                    <span class="ldc-feat"><i class="fas fa-laptop-code"></i> Engineering (B.Tech / B.E.)</span>
+                    <span class="ldc-feat"><i class="fas fa-heartbeat"></i> Medical (MBBS, BDS, B.Pharm)</span>
+                    <span class="ldc-feat"><i class="fas fa-vial"></i> Pure Sciences (B.Sc, Research)</span>
+                    <span class="ldc-feat"><i class="fas fa-building"></i> Architecture & Design (B.Arch)</span>
+                </div>
+                <a href="explore.html" class="btn btn-secondary btn-full" style="justify-content:center;margin-top:auto">View Science Paths <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="level-detail-card reveal" style="--delay:0.2s">
+                <div class="ldc-icon-wrap" style="background:linear-gradient(135deg,#fbbf24,#f59e0b)"><i class="fas fa-coins"></i></div>
+                <h3>After 12th Commerce</h3>
+                <p>The foundation of the business and financial world. Excel in numbers, management, and corporate strategy.</p>
+                <div class="ldc-features">
+                    <span class="ldc-feat"><i class="fas fa-calculator"></i> Pro Certifications (CA, CS, CMA)</span>
+                    <span class="ldc-feat"><i class="fas fa-briefcase"></i> Management (BBA, BMS)</span>
+                    <span class="ldc-feat"><i class="fas fa-chart-bar"></i> Core Commerce (B.Com)</span>
+                    <span class="ldc-feat"><i class="fas fa-balance-scale"></i> Corporate Law (B.Com LLB)</span>
+                </div>
+                <a href="explore.html" class="btn btn-secondary btn-full" style="justify-content:center;margin-top:auto">View Commerce Paths <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="level-detail-card reveal" style="--delay:0.0s">
+                <div class="ldc-icon-wrap" style="background:linear-gradient(135deg,#f472b6,#ec4899)"><i class="fas fa-paint-brush"></i></div>
+                <h3>After 12th Arts</h3>
+                <p>Ideal for creative minds, analytical thinkers, and those interested in society, law, media, and design.</p>
+                <div class="ldc-features">
+                    <span class="ldc-feat"><i class="fas fa-gavel"></i> Law & Legal Studies (BA LLB)</span>
+                    <span class="ldc-feat"><i class="fas fa-newspaper"></i> Journalism & Mass Media</span>
+                    <span class="ldc-feat"><i class="fas fa-crop-alt"></i> Design (Fashion, Interior, UX)</span>
+                    <span class="ldc-feat"><i class="fas fa-book-reader"></i> Humanities & Civil Services Prep</span>
+                </div>
+                <a href="explore.html" class="btn btn-secondary btn-full" style="justify-content:center;margin-top:auto">View Arts Paths <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="level-detail-card reveal" style="--delay:0.1s">
+                <div class="ldc-icon-wrap" style="background:linear-gradient(135deg,#60a5fa,#3b82f6)"><i class="fas fa-cogs"></i></div>
+                <h3>After Diploma</h3>
+                <p>You have practical, hands-on experience. Now bridge the gap to higher degrees or specialized industrial roles.</p>
+                <div class="ldc-features">
+                    <span class="ldc-feat"><i class="fas fa-graduation-cap"></i> Lateral Entry to B.Tech (2nd Year)</span>
+                    <span class="ldc-feat"><i class="fas fa-hard-hat"></i> AMIE Certification</span>
+                    <span class="ldc-feat"><i class="fas fa-certificate"></i> Specialized Skill Certifications</span>
+                    <span class="ldc-feat"><i class="fas fa-industry"></i> Placement & Govt Jobs (RRB, SSC)</span>
+                </div>
+                <a href="explore.html" class="btn btn-secondary btn-full" style="justify-content:center;margin-top:auto">View Diploma Paths <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="level-detail-card reveal" style="--delay:0.2s">
+                <div class="ldc-icon-wrap" style="background:linear-gradient(135deg,#c084fc,#a855f7)"><i class="fas fa-user-graduate"></i></div>
+                <h3>After Graduation & Beyond</h3>
+                <p>The final polish. Specialize your skills to reach top management, deep research, or high-ranking government roles.</p>
+                <div class="ldc-features">
+                    <span class="ldc-feat"><i class="fas fa-briefcase"></i> Management (MBA, PGDM)</span>
+                    <span class="ldc-feat"><i class="fas fa-laptop-code"></i> Technical Masters (M.Tech, MCA)</span>
+                    <span class="ldc-feat"><i class="fas fa-landmark"></i> Civil Services (UPSC, State PSC)</span>
+                    <span class="ldc-feat"><i class="fas fa-globe-americas"></i> Study Abroad & PhD Research</span>
+                </div>
+                <a href="explore.html" class="btn btn-secondary btn-full" style="justify-content:center;margin-top:auto">View PG Paths <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+                    <span class="logo-icon">प्र</span><span class="logo-text" style="color:white">Pragati</span>
+                </a>
+                <p>Empowering every Indian student to make informed decisions about education and career — from Class 10 to PhD.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="browse-paths.html">Browse All Paths</a>
+                <a href="path-explorer.html">Interactive Explorer</a>
+                <a href="explore.html#by-level">By Education Level</a>
+                <a href="explore.html#streams">By Stream</a>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign Up Free</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">College Rankings</a>
+                <a href="#">Scholarship Guide</a>
+                <a href="#">Entrance Exam Dates</a>
+                <a href="#">Career Aptitude Test</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Pragati. All rights reserved. Made with ❤️ for Indian students.</span>
+            <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+// Navbar
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+});
+document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+// Mobile nav
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobilePanel = document.getElementById('mobilePanel');
+const closeMobileNav = () => { 
+    mobileOverlay.classList.remove('open'); 
+    mobilePanel.classList.remove('open'); 
+    document.body.style.overflow = ''; 
+    document.body.classList.remove('mobile-menu-open'); 
+};
+const openMobileNav = () => { 
+    mobileOverlay.classList.add('open'); 
+    mobilePanel.classList.add('open'); 
+    document.body.style.overflow = 'hidden'; 
+    document.body.classList.add('mobile-menu-open'); 
+};
+document.getElementById('hamburger').addEventListener('click', openMobileNav);
+document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+mobileOverlay.addEventListener('click', (e) => { if(e.target.id === 'mobilePanel' || e.target.closest('#mobilePanel')) return; closeMobileNav(); });
+document.querySelectorAll('.nav-mobile-links a').forEach(l => l.addEventListener('click', closeMobileNav));
+
+// Reveal
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold:.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script src="../scripts/nav-auth.js"></script></body>
+</html>
+
